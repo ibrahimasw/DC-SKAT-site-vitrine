@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Conditions Générales de Vente — DC SKAT Distribution et Commerce Multisectoriel." />
+  <meta name="robots" content="noindex" />
+  <title>CGV — DC SKAT</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    .page-hero {
+      background: linear-gradient(135deg, var(--vert-dark) 0%, var(--vert) 100%);
+      color: var(--blanc-pur);
+      padding: 3.5rem 1.5rem 2.5rem;
+    }
+    .page-hero-inner { max-width: 900px; margin: 0 auto; }
+    .breadcrumb {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .breadcrumb a { color: rgba(255,255,255,0.55); transition: color var(--transition); }
+    .breadcrumb a:hover { color: var(--olive); }
+    .breadcrumb span { color: rgba(255,255,255,0.3); }
+    .page-hero h1 {
+      font-family: var(--font-titre);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--blanc-pur);
+      margin-bottom: 0.5rem;
+    }
+    .page-hero h1 span { color: var(--olive); }
+    .page-hero-meta { font-size: 0.8rem; color: rgba(255,255,255,0.55); margin-top: 0.5rem; }
+
+    /*  CONTENU LÉGAL  */
+    .legal-section { padding: 3rem 1.5rem 5rem; }
+    .legal-inner { max-width: 900px; margin: 0 auto; }
+
+    .legal-nav {
+      background: var(--blanc-pur);
+      border: 2px solid #e8e7e0;
+      border-radius: 10px;
+      padding: 1.2rem 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+    .legal-nav p {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--gris);
+      margin-bottom: 0.6rem;
+    }
+    .legal-nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .legal-nav-links a {
+      font-size: 0.78rem;
+      color: var(--vert);
+      font-weight: 700;
+      padding: 4px 12px;
+      background: rgba(0,102,51,0.06);
+      border-radius: 100px;
+      transition: background var(--transition);
+    }
+    .legal-nav-links a:hover { background: rgba(0,102,51,0.14); }
+
+    .legal-article {
+      margin-bottom: 2.5rem;
+      padding-bottom: 2.5rem;
+      border-bottom: 1px solid #e8e7e0;
+    }
+    .legal-article:last-child { border-bottom: none; }
+
+    .legal-article h2 {
+      font-family: var(--font-titre);
+      font-size: 1.3rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--vert);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .legal-article h2 .num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      background: var(--vert);
+      color: var(--blanc-pur);
+      font-size: 0.8rem;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .legal-article h3 {
+      font-family: var(--font-corps);
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--noir);
+      margin: 1rem 0 0.4rem;
+    }
+    .legal-article p {
+      font-size: 0.88rem;
+      color: var(--noir);
+      line-height: 1.75;
+      margin-bottom: 0.8rem;
+    }
+    .legal-article ul {
+      list-style: disc;
+      padding-left: 1.5rem;
+      margin-bottom: 0.8rem;
+    }
+    .legal-article ul li {
+      font-size: 0.88rem;
+      color: var(--noir);
+      line-height: 1.7;
+      margin-bottom: 0.3rem;
+    }
+    .legal-highlight {
+      background: rgba(0,102,51,0.06);
+      border-left: 3px solid var(--vert);
+      padding: 0.8rem 1.2rem;
+      border-radius: 0 6px 6px 0;
+      margin: 1rem 0;
+      font-size: 0.85rem;
+      color: var(--noir);
+      line-height: 1.6;
+    }
+
+    /* Autres pages légales */
+    .legal-links-section {
+      background: var(--blanc-pur);
+      border: 2px solid #e8e7e0;
+      border-radius: 10px;
+      padding: 1.5rem;
+      margin-top: 2rem;
+    }
+    .legal-links-section h3 {
+      font-family: var(--font-titre);
+      font-size: 1rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--vert);
+      margin-bottom: 1rem;
+    }
+    .legal-links-grid {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .legal-link-card {
+      flex: 1;
+      min-width: 160px;
+      background: var(--blanc);
+      border: 1.5px solid #e2e1d8;
+      border-radius: 8px;
+      padding: 1rem;
+      text-decoration: none;
+      transition: border-color var(--transition), box-shadow var(--transition);
+    }
+    .legal-link-card:hover { border-color: var(--vert); box-shadow: var(--shadow); }
+    .legal-link-card .llc-title {
+      font-family: var(--font-titre);
+      font-size: 0.95rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--vert);
+    }
+    .legal-link-card .llc-desc { font-size: 0.75rem; color: var(--gris); margin-top: 0.2rem; }
+  </style>
+</head>
+<body>
+
+  
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="index.html" class="logo" aria-label="DC SKAT — Accueil">
+        <img src="logo.png" alt="DC SKAT — Distribution et Commerce Multisectoriel" />
+      </a>
+      <nav class="nav" aria-label="Navigation principale">
+        <a href="index.html">Accueil</a>
+        <a href="high-tech.html">High Tech</a>
+        <a href="cosmetiques.html">Cosmétiques</a>
+        <a href="medical.html">Médical</a>
+        <a href="destockage.html">Déstockage</a>
+        <a href="contact.html" class="nav-cta">Demander un devis</a>
+      </nav>
+      <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false" id="burgerBtn">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <nav class="nav-mobile" id="navMobile" aria-label="Navigation mobile">
+      <a href="index.html">Accueil</a>
+      <a href="high-tech.html">High Tech</a>
+      <a href="cosmetiques.html">Cosmétiques</a>
+      <a href="medical.html">Médical</a>
+      <a href="destockage.html">Déstockage</a>
+      <a href="contact.html" class="nav-cta">Demander un devis</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="page-hero-inner">
+        <div class="breadcrumb">
+          <a href="index.html">Accueil</a>
+          <span>›</span>
+          <strong>CGV</strong>
+        </div>
+        <h1>Conditions <span>Générales de Vente</span></h1>
+        <div class="page-hero-meta">DC SKAT — Version en vigueur au 1er juin 2026</div>
+      </div>
+    </section>
+
+    <section class="legal-section">
+      <div class="legal-inner">
+
+        <!-- Sommaire -->
+        <nav class="legal-nav" aria-label="Sommaire">
+          <p>Sommaire</p>
+          <div class="legal-nav-links">
+            <a href="#art1">1. Objet</a>
+            <a href="#art2">2. Identité</a>
+            <a href="#art3">3. Produits</a>
+            <a href="#art4">4. Prix</a>
+            <a href="#art5">5. Commandes</a>
+            <a href="#art6">6. Paiement</a>
+            <a href="#art7">7. Livraison</a>
+            <a href="#art8">8. Retours</a>
+            <a href="#art9">9. Garanties</a>
+            <a href="#art10">10. Responsabilité</a>
+            <a href="#art11">11. RGPD</a>
+            <a href="#art12">12. Litiges</a>
+          </div>
+        </nav>
+
+        <!-- Articles -->
+        <article class="legal-article" id="art1">
+          <h2><span class="num">1</span> Objet</h2>
+          <p>Les présentes Conditions Générales de Vente (CGV) régissent l'ensemble des ventes de produits réalisées par DC SKAT (Distribution et Commerce Multisectoriel) auprès de ses clients, qu'ils soient professionnels (B2B) ou particuliers (B2C), via le site vitrine <strong>www.dcskat.fr</strong>, les boutiques en ligne associées ou par tout autre canal de vente.</p>
+          <p>Toute commande implique l'acceptation pleine et entière des présentes CGV. DC SKAT se réserve le droit de les modifier à tout moment ; les CGV applicables sont celles en vigueur à la date de la commande.</p>
+        </article>
+
+        <article class="legal-article" id="art2">
+          <h2><span class="num">2</span> Identité du vendeur</h2>
+          <div class="legal-highlight">
+            <strong>DC SKAT</strong> — Distribution et Commerce Multisectoriel<br>
+            Code NAF : 4690Z — Commerce de gros non spécialisé<br>
+            Siège social : Île-de-France, France<br>
+            Email : <a href="mailto:contact@dcskat.fr" style="color:var(--vert)">contact@dcskat.fr</a><br>
+            Site : www.dcskat.fr
+          </div>
+        </article>
+
+        <article class="legal-article" id="art3">
+          <h2><span class="num">3</span> Produits</h2>
+          <p>DC SKAT commercialise des produits dans quatre univers :</p>
+          <ul>
+            <li><strong>High Tech</strong> : smartphones reconditionnés (Grades A/B), écouteurs Bluetooth, câbles USB-C, montres connectées et accessoires.</li>
+            <li><strong>Cosmétiques</strong> : soins visage et corps, parfums, maquillage, conformes à la réglementation européenne (INCO/CPNP).</li>
+            <li><strong>Médical & Paramédical</strong> : dispositifs médicaux et consommables certifiés CE conformes aux réglementations en vigueur.</li>
+            <li><strong>Déstockage & Lots</strong> : palettes mixtes, fins de série et surstocks à prix réduits.</li>
+          </ul>
+          <p>Les caractéristiques essentielles des produits sont présentées sur les fiches produits. DC SKAT s'efforce d'assurer l'exactitude des informations mais ne saurait être tenu responsable d'erreurs ou omissions mineures.</p>
+        </article>
+
+        <article class="legal-article" id="art4">
+          <h2><span class="num">4</span> Prix</h2>
+          <p>Les prix sont indiqués en euros (€) hors taxes (HT) sauf mention contraire. La TVA applicable sera précisée sur les devis et factures. DC SKAT se réserve le droit de modifier ses prix à tout moment. Les prix applicables sont ceux en vigueur au moment de la validation de la commande.</p>
+          <p>Pour les commandes B2B en volume, des remises peuvent être accordées sur devis. Tout devis est valable 30 jours à compter de sa date d'émission.</p>
+        </article>
+
+        <article class="legal-article" id="art5">
+          <h2><span class="num">5</span> Commandes</h2>
+          <p>Les commandes peuvent être passées via le formulaire de devis en ligne, par email à contact@dcskat.fr ou via les boutiques en ligne DC SKAT. Toute commande n'est définitive qu'après confirmation écrite de DC SKAT et réception du paiement ou d'un acompte convenu.</p>
+          <p>DC SKAT se réserve le droit de refuser toute commande pour des motifs légitimes, notamment en cas de litige antérieur ou de suspicion de fraude.</p>
+        </article>
+
+        <article class="legal-article" id="art6">
+          <h2><span class="num">6</span> Paiement</h2>
+          <h3>Moyens de paiement acceptés</h3>
+          <ul>
+            <li>Carte bancaire (CB, Visa, Mastercard) via Stripe</li>
+            <li>Apple Pay et Google Pay via Stripe</li>
+            <li>Virement bancaire (sur devis B2B)</li>
+          </ul>
+          <h3>Conditions</h3>
+          <p>Pour les particuliers (B2C), le paiement est exigible à la commande. Pour les professionnels (B2B), des conditions de paiement spécifiques peuvent être négociées (acompte, paiement à 30 jours). En cas de retard de paiement, des pénalités de retard au taux légal en vigueur seront appliquées.</p>
+        </article>
+
+        <article class="legal-article" id="art7">
+          <h2><span class="num">7</span> Livraison</h2>
+          <p>DC SKAT livre sur l'ensemble du territoire français. Les délais de livraison sont indiqués à titre indicatif et ne constituent pas un engagement ferme. En cas de retard, DC SKAT informera le client dans les meilleurs délais.</p>
+          <p>Les frais de livraison sont précisés au moment de la commande. Le transfert de risques s'effectue au moment de la remise des produits au transporteur.</p>
+        </article>
+
+        <article class="legal-article" id="art8">
+          <h2><span class="num">8</span> Retours et remboursements</h2>
+          <h3>Droit de rétractation (B2C)</h3>
+          <p>Conformément aux articles L.221-18 et suivants du Code de la consommation, les clients particuliers disposent d'un délai de 14 jours à compter de la réception des produits pour exercer leur droit de rétractation, sans avoir à justifier de motifs.</p>
+          <h3>Retours professionnels (B2B)</h3>
+          <p>Les retours de marchandises par les professionnels sont soumis à l'accord préalable de DC SKAT et aux conditions négociées lors de la commande.</p>
+          <h3>Produits défectueux</h3>
+          <p>Tout produit défectueux doit être signalé dans les 48h suivant la réception. DC SKAT procédera à l'échange ou au remboursement selon la disponibilité des stocks.</p>
+        </article>
+
+        <article class="legal-article" id="art9">
+          <h2><span class="num">9</span> Garanties</h2>
+          <p>Les produits bénéficient de la garantie légale de conformité (articles L.217-4 et suivants du Code de la consommation) et de la garantie contre les vices cachés (articles 1641 et suivants du Code civil). Les smartphones reconditionnés bénéficient d'une garantie spécifique précisée sur chaque fiche produit.</p>
+        </article>
+
+        <article class="legal-article" id="art10">
+          <h2><span class="num">10</span> Responsabilité</h2>
+          <p>DC SKAT ne saurait être tenu responsable des dommages indirects résultant de l'utilisation de ses produits. La responsabilité de DC SKAT est limitée au montant de la commande concernée. DC SKAT ne peut être tenu responsable des retards ou défauts d'exécution dus à des cas de force majeure.</p>
+        </article>
+
+        <article class="legal-article" id="art11">
+          <h2><span class="num">11</span> Protection des données (RGPD)</h2>
+          <p>Les données personnelles collectées lors des commandes sont traitées conformément à la politique de confidentialité de DC SKAT, disponible à l'adresse <a href="rgpd.html" style="color:var(--vert)">www.dcskat.fr/rgpd</a>. Elles sont utilisées uniquement pour le traitement des commandes et ne sont pas transmises à des tiers sans consentement.</p>
+        </article>
+
+        <article class="legal-article" id="art12">
+          <h2><span class="num">12</span> Litiges et droit applicable</h2>
+          <p>Les présentes CGV sont soumises au droit français. En cas de litige, une solution amiable sera recherchée en priorité. À défaut, le litige sera soumis aux tribunaux compétents du ressort du siège social de DC SKAT.</p>
+          <p>Conformément aux dispositions du Code de la consommation, les clients particuliers peuvent recourir à un médiateur de la consommation en cas de litige non résolu.</p>
+        </article>
+
+        <!-- Liens pages légales -->
+        <div class="legal-links-section">
+          <h3>Autres documents légaux</h3>
+          <div class="legal-links-grid">
+            <a href="mentions-legales.html" class="legal-link-card">
+              <div class="llc-title">Mentions légales</div>
+              <div class="llc-desc">Informations légales de DC SKAT</div>
+            </a>
+            <a href="rgpd.html" class="legal-link-card">
+              <div class="llc-title">Politique RGPD</div>
+              <div class="llc-desc">Protection de vos données personnelles</div>
+            </a>
+            <a href="contact.html" class="legal-link-card">
+              <div class="llc-title">Contact</div>
+              <div class="llc-desc">Une question ? Contactez-nous</div>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="logo.png" alt="DC SKAT" style="width:200px;height:auto;margin-bottom:0.8rem;display:block;" />
+          <p class="footer-desc">Grossiste multisectoriel basé en Île-de-France. B2B & B2C.</p>
+          <div class="footer-contact">
+            <div> <a href="mailto:contact@dcskat.fr">contact@dcskat.fr</a></div>
+            <div> Île-de-France, France</div>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Nos univers</h4>
+          <ul>
+            <li><a href="high-tech.html">High Tech</a></li>
+            <li><a href="cosmetiques.html">Cosmétiques</a></li>
+            <li><a href="medical.html">Médical & Paramédical</a></li>
+            <li><a href="destockage.html">Déstockage & Lots</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Boutiques</h4>
+          <ul>
+            <li><a href="https://hightech.dcskat.fr" target="_blank" rel="noopener">High Tech Shop</a></li>
+            <li><a href="https://cosmetiques.dcskat.fr" target="_blank" rel="noopener">Cosmétiques Shop</a></li>
+            <li><a href="https://medical.dcskat.fr" target="_blank" rel="noopener">Médical Shop</a></li>
+            <li><a href="https://destockage.dcskat.fr" target="_blank" rel="noopener">Déstockage Shop</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Légal</h4>
+          <ul>
+            <li><a href="cgv.html">CGV</a></li>
+            <li><a href="mentions-legales.html">Mentions légales</a></li>
+            <li><a href="rgpd.html">Politique RGPD</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 DC SKAT — Tous droits réservés.</p>
+        <nav class="footer-legal">
+          <a href="cgv.html">CGV</a>
+          <a href="mentions-legales.html">Mentions légales</a>
+          <a href="rgpd.html">RGPD</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
