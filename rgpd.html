@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Politique de confidentialité RGPD — DC SKAT Distribution et Commerce Multisectoriel." />
+  <meta name="robots" content="noindex" />
+  <title>Politique RGPD — DC SKAT</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    .page-hero {
+      background: linear-gradient(135deg, var(--vert-dark) 0%, var(--vert) 100%);
+      color: var(--blanc-pur);
+      padding: 3.5rem 1.5rem 2.5rem;
+    }
+    .page-hero-inner { max-width: 900px; margin: 0 auto; }
+    .breadcrumb {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .breadcrumb a { color: rgba(255,255,255,0.55); transition: color var(--transition); }
+    .breadcrumb a:hover { color: var(--olive); }
+    .breadcrumb span { color: rgba(255,255,255,0.3); }
+    .page-hero h1 {
+      font-family: var(--font-titre);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--blanc-pur);
+      margin-bottom: 0.5rem;
+    }
+    .page-hero h1 span { color: var(--olive); }
+    .page-hero-meta { font-size: 0.8rem; color: rgba(255,255,255,0.55); margin-top: 0.5rem; }
+
+    .legal-section { padding: 3rem 1.5rem 5rem; }
+    .legal-inner { max-width: 900px; margin: 0 auto; }
+
+    /* Résumé RGPD */
+    .rgpd-resume {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+    .rgpd-card {
+      background: var(--blanc-pur);
+      border: 2px solid #e8e7e0;
+      border-radius: 10px;
+      padding: 1.2rem;
+      text-align: center;
+    }
+    .rgpd-card .icon { font-size: 1.8rem; margin-bottom: 0.5rem; }
+    .rgpd-card .title {
+      font-family: var(--font-titre);
+      font-size: 0.9rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--vert);
+      margin-bottom: 0.3rem;
+    }
+    .rgpd-card .desc { font-size: 0.75rem; color: var(--gris); line-height: 1.5; }
+
+    .legal-article {
+      margin-bottom: 2.5rem;
+      padding-bottom: 2.5rem;
+      border-bottom: 1px solid #e8e7e0;
+    }
+    .legal-article:last-child { border-bottom: none; }
+    .legal-article h2 {
+      font-family: var(--font-titre);
+      font-size: 1.2rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--vert);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .legal-article h2 .num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      background: var(--vert);
+      color: var(--blanc-pur);
+      font-size: 0.8rem;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .legal-article h3 {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--noir);
+      margin: 1rem 0 0.4rem;
+    }
+    .legal-article p {
+      font-size: 0.88rem;
+      color: var(--noir);
+      line-height: 1.75;
+      margin-bottom: 0.8rem;
+    }
+    .legal-article ul {
+      list-style: disc;
+      padding-left: 1.5rem;
+      margin-bottom: 0.8rem;
+    }
+    .legal-article ul li {
+      font-size: 0.88rem;
+      color: var(--noir);
+      line-height: 1.7;
+      margin-bottom: 0.3rem;
+    }
+    .legal-highlight {
+      background: rgba(0,102,51,0.06);
+      border-left: 3px solid var(--vert);
+      padding: 0.8rem 1.2rem;
+      border-radius: 0 6px 6px 0;
+      margin: 1rem 0;
+      font-size: 0.85rem;
+      line-height: 1.7;
+    }
+    .legal-highlight a { color: var(--vert); font-weight: 700; }
+
+    /* Tableau droits */
+    .droits-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.8rem;
+      margin-top: 1rem;
+    }
+    .droit-item {
+      background: var(--blanc);
+      border: 1.5px solid #e2e1d8;
+      border-radius: 8px;
+      padding: 1rem;
+    }
+    .droit-item .droit-title {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--vert);
+      margin-bottom: 0.3rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .droit-item .droit-desc { font-size: 0.78rem; color: var(--gris); line-height: 1.5; }
+
+    .legal-links-section {
+      background: var(--blanc-pur);
+      border: 2px solid #e8e7e0;
+      border-radius: 10px;
+      padding: 1.5rem;
+      margin-top: 2rem;
+    }
+    .legal-links-section h3 {
+      font-family: var(--font-titre);
+      font-size: 1rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--vert);
+      margin-bottom: 1rem;
+    }
+    .legal-links-grid { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .legal-link-card {
+      flex: 1;
+      min-width: 160px;
+      background: var(--blanc);
+      border: 1.5px solid #e2e1d8;
+      border-radius: 8px;
+      padding: 1rem;
+      text-decoration: none;
+      transition: border-color var(--transition), box-shadow var(--transition);
+    }
+    .legal-link-card:hover { border-color: var(--vert); box-shadow: var(--shadow); }
+    .legal-link-card .llc-title { font-family: var(--font-titre); font-size: 0.95rem; font-weight: 800; text-transform: uppercase; color: var(--vert); }
+    .legal-link-card .llc-desc { font-size: 0.75rem; color: var(--gris); margin-top: 0.2rem; }
+
+    @media (max-width: 640px) {
+      .rgpd-resume { grid-template-columns: 1fr; }
+      .droits-grid  { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="index.html" class="logo" aria-label="DC SKAT — Accueil">
+        <img src="logo.png" alt="DC SKAT — Distribution et Commerce Multisectoriel" />
+      </a>
+      <nav class="nav" aria-label="Navigation principale">
+        <a href="index.html">Accueil</a>
+        <a href="high-tech.html">High Tech</a>
+        <a href="cosmetiques.html">Cosmétiques</a>
+        <a href="medical.html">Médical</a>
+        <a href="destockage.html">Déstockage</a>
+        <a href="contact.html" class="nav-cta">Demander un devis</a>
+      </nav>
+      <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false" id="burgerBtn">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <nav class="nav-mobile" id="navMobile" aria-label="Navigation mobile">
+      <a href="index.html">Accueil</a>
+      <a href="high-tech.html">High Tech</a>
+      <a href="cosmetiques.html">Cosmétiques</a>
+      <a href="medical.html">Médical</a>
+      <a href="destockage.html">Déstockage</a>
+      <a href="contact.html" class="nav-cta">Demander un devis</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="page-hero-inner">
+        <div class="breadcrumb">
+          <a href="index.html">Accueil</a>
+          <span>›</span>
+          <strong>Politique RGPD</strong>
+        </div>
+        <h1>Politique de <span>confidentialité</span></h1>
+        <div class="page-hero-meta">Conforme au RGPD (UE) 2016/679 — Dernière mise à jour : 1er juin 2026</div>
+      </div>
+    </section>
+
+    <section class="legal-section">
+      <div class="legal-inner">
+
+        <!-- Résumé -->
+        <div class="rgpd-resume">
+          <div class="rgpd-card">
+            <div class="icon"></div>
+            <div class="title">Données sécurisées</div>
+            <div class="desc">Vos données sont protégées et jamais revendues à des tiers.</div>
+          </div>
+          <div class="rgpd-card">
+            <div class="icon"></div>
+            <div class="title">Usage limité</div>
+            <div class="desc">Collecte uniquement pour traiter vos commandes et devis.</div>
+          </div>
+          <div class="rgpd-card">
+            <div class="icon"></div>
+            <div class="title">Vos droits</div>
+            <div class="desc">Accès, rectification, suppression de vos données sur simple demande.</div>
+          </div>
+        </div>
+
+        <article class="legal-article">
+          <h2><span class="num">1</span> Responsable du traitement</h2>
+          <div class="legal-highlight">
+            <strong>DC SKAT</strong> — Distribution et Commerce Multisectoriel<br>
+            Siège social : Île-de-France, France<br>
+            Email DPO : <a href="mailto:contact@dcskat.fr">contact@dcskat.fr</a>
+          </div>
+        </article>
+
+        <article class="legal-article">
+          <h2><span class="num">2</span> Données collectées</h2>
+          <h3>Via le formulaire de contact / devis</h3>
+          <ul>
+            <li>Nom, prénom</li>
+            <li>Adresse email et numéro de téléphone</li>
+            <li>Nom de société (optionnel)</li>
+            <li>Type de client (B2B/B2C)</li>
+            <li>Contenu de la demande (univers, quantités, budget, message)</li>
+          </ul>
+          <h3>Via les boutiques en ligne</h3>
+          <ul>
+            <li>Données d'identification (nom, prénom, email)</li>
+            <li>Adresse de livraison et de facturation</li>
+            <li>Données de paiement (traitées exclusivement par Stripe — DC SKAT n'accède pas aux numéros de carte)</li>
+            <li>Historique des commandes</li>
+          </ul>
+          <h3>Via les cookies (Google Analytics 4)</h3>
+          <ul>
+            <li>Données de navigation anonymisées (pages visitées, durée, source)</li>
+            <li>Adresse IP anonymisée</li>
+          </ul>
+        </article>
+
+        <article class="legal-article">
+          <h2><span class="num">3</span> Finalités du traitement</h2>
+          <ul>
+            <li>Traitement et suivi des demandes de devis</li>
+            <li>Gestion des commandes et de la relation client</li>
+            <li>Envoi d'emails transactionnels (confirmation, expédition, facture)</li>
+            <li>Amélioration du site via l'analyse d'audience (GA4)</li>
+            <li>Respect des obligations légales et comptables</li>
+          </ul>
+        </article>
+
+        <article class="legal-article">
+          <h2><span class="num">4</span> Base légale du traitement</h2>
+          <ul>
+            <li><strong>Exécution d'un contrat</strong> : traitement des commandes et devis</li>
+            <li><strong>Consentement</strong> : cookies analytiques, alertes arrivages</li>
+            <li><strong>Intérêt légitime</strong> : amélioration du service, sécurité</li>
+            <li><strong>Obligation légale</strong> : conservation des données comptables (10 ans)</li>
+          </ul>
+        </article>
+
+        <article class="legal-article">
+          <h2><span class="num">5</span> Durée de conservation</h2>
+          <ul>
+            <li>Données clients actifs : durée de la relation commerciale + 3 ans</li>
+            <li>Données de commandes et factures : 10 ans (obligation légale)</li>
+            <li>Données de formulaire de contact : 3 ans sans suite commerciale</li>
+            <li>Cookies analytiques : 13 mois maximum</li>
+          </ul>
+        </article>
+
+        <article class="legal-article">
+          <h2><span class="num">6</span> Partage des données</h2>
+          <p>DC SKAT ne vend, ne loue et ne partage pas vos données personnelles à des tiers à des fins commerciales. Les données peuvent être partagées uniquement avec :</p>
+          <ul>
+            <li><strong>Stripe</strong> : traitement sécurisé des paiements (PCI-DSS niveau 1)</li>
+            <li><strong>Google Analytics 4</strong> : analyse d'audience anonymisée</li>
+            <li><strong>Emergent</strong> : hébergement et gestion des boutiques</li>
+            <li><strong>Prestataires logistiques</strong> : pour la livraison des commandes uniquement</li>
+          </ul>
+          <p>Ces prestataires agissent en qualité de sous-traitants et sont soumis à des obligations strictes de confidentialité.</p>
+        </article>
+
+        <article class="legal-article">
+          <h2><span class="num">7</span> Vos droits</h2>
+          <p>Conformément au RGPD, vous disposez des droits suivants sur vos données personnelles :</p>
+          <div class="droits-grid">
+            <div class="droit-item">
+              <div class="droit-title"> Droit d'accès</div>
+              <div class="droit-desc">Obtenir une copie de vos données personnelles que nous détenons.</div>
+            </div>
+            <div class="droit-item">
+              <div class="droit-title">️ Droit de rectification</div>
+              <div class="droit-desc">Corriger des données inexactes ou incomplètes vous concernant.</div>
+            </div>
+            <div class="droit-item">
+              <div class="droit-title">️ Droit d'effacement</div>
+              <div class="droit-desc">Demander la suppression de vos données (sous réserve des obligations légales).</div>
+            </div>
+            <div class="droit-item">
+              <div class="droit-title">⏸️ Droit de limitation</div>
+              <div class="droit-desc">Demander la limitation du traitement de vos données dans certains cas.</div>
+            </div>
+            <div class="droit-item">
+              <div class="droit-title"> Droit à la portabilité</div>
+              <div class="droit-desc">Recevoir vos données dans un format structuré et lisible par machine.</div>
+            </div>
+            <div class="droit-item">
+              <div class="droit-title"> Droit d'opposition</div>
+              <div class="droit-desc">Vous opposer au traitement de vos données pour des motifs légitimes.</div>
+            </div>
+          </div>
+          <p style="margin-top:1rem">Pour exercer vos droits, contactez-nous à : <a href="mailto:contact@dcskat.fr" style="color:var(--vert);font-weight:700">contact@dcskat.fr</a>. Nous répondons dans un délai maximum de 30 jours. En cas de réclamation non résolue, vous pouvez saisir la <a href="https://www.cnil.fr" target="_blank" rel="noopener" style="color:var(--vert);font-weight:700">CNIL</a>.</p>
+        </article>
+
+        <article class="legal-article">
+          <h2><span class="num">8</span> Sécurité des données</h2>
+          <p>DC SKAT met en œuvre des mesures techniques et organisationnelles appropriées pour protéger vos données contre tout accès non autorisé, perte ou destruction :</p>
+          <ul>
+            <li>Chiffrement SSL/TLS sur l'ensemble des communications (HTTPS)</li>
+            <li>Paiements sécurisés via Stripe (certifié PCI-DSS niveau 1)</li>
+            <li>Accès aux données limité aux personnes habilitées</li>
+            <li>Hébergement sur des infrastructures sécurisées (Emergent, Vercel)</li>
+          </ul>
+        </article>
+
+        <article class="legal-article">
+          <h2><span class="num">9</span> Cookies</h2>
+          <p>Le site utilise les cookies suivants :</p>
+          <ul>
+            <li><strong>Cookies strictement nécessaires</strong> : fonctionnement du site, session, panier — pas de consentement requis.</li>
+            <li><strong>Cookies analytiques (GA4)</strong> : mesure d'audience anonymisée — consentement requis.</li>
+          </ul>
+          <p>Vous pouvez gérer vos préférences cookies via les paramètres de votre navigateur ou en nous contactant.</p>
+        </article>
+
+        <article class="legal-article">
+          <h2><span class="num">10</span> Modifications</h2>
+          <p>DC SKAT se réserve le droit de modifier la présente politique de confidentialité à tout moment. En cas de modification substantielle, les utilisateurs en seront informés par email ou par un avis visible sur le site. La politique en vigueur est toujours accessible à l'adresse <strong>www.dcskat.fr/rgpd</strong>.</p>
+        </article>
+
+        <div class="legal-links-section">
+          <h3>Autres documents légaux</h3>
+          <div class="legal-links-grid">
+            <a href="cgv.html" class="legal-link-card">
+              <div class="llc-title">CGV</div>
+              <div class="llc-desc">Conditions Générales de Vente</div>
+            </a>
+            <a href="mentions-legales.html" class="legal-link-card">
+              <div class="llc-title">Mentions légales</div>
+              <div class="llc-desc">Informations légales de DC SKAT</div>
+            </a>
+            <a href="contact.html" class="legal-link-card">
+              <div class="llc-title">Contact DPO</div>
+              <div class="llc-desc">Exercer vos droits RGPD</div>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="logo.png" alt="DC SKAT" style="width:200px;height:auto;margin-bottom:0.8rem;display:block;" />
+          <p class="footer-desc">Grossiste multisectoriel basé en Île-de-France. B2B & B2C.</p>
+          <div class="footer-contact">
+            <div> <a href="mailto:contact@dcskat.fr">contact@dcskat.fr</a></div>
+            <div> Île-de-France, France</div>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Nos univers</h4>
+          <ul>
+            <li><a href="high-tech.html">High Tech</a></li>
+            <li><a href="cosmetiques.html">Cosmétiques</a></li>
+            <li><a href="medical.html">Médical & Paramédical</a></li>
+            <li><a href="destockage.html">Déstockage & Lots</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Boutiques</h4>
+          <ul>
+            <li><a href="https://hightech.dcskat.fr" target="_blank" rel="noopener">High Tech Shop</a></li>
+            <li><a href="https://cosmetiques.dcskat.fr" target="_blank" rel="noopener">Cosmétiques Shop</a></li>
+            <li><a href="https://medical.dcskat.fr" target="_blank" rel="noopener">Médical Shop</a></li>
+            <li><a href="https://destockage.dcskat.fr" target="_blank" rel="noopener">Déstockage Shop</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Légal</h4>
+          <ul>
+            <li><a href="cgv.html">CGV</a></li>
+            <li><a href="mentions-legales.html">Mentions légales</a></li>
+            <li><a href="rgpd.html">Politique RGPD</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 DC SKAT — Tous droits réservés.</p>
+        <nav class="footer-legal">
+          <a href="cgv.html">CGV</a>
+          <a href="mentions-legales.html">Mentions légales</a>
+          <a href="rgpd.html">RGPD</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

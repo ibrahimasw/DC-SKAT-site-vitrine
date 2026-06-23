@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="DC SKAT — Contactez-nous pour un devis personnalisé. Réponse garantie sous 24h. High Tech, Cosmétiques, Médical, Déstockage." />
+  <meta name="theme-color" content="#006633" />
+  <title>Contact & Devis — DC SKAT</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet" />
+
+  <!-- Feuille de style commune -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- CSS spécifique Contact -->
+  <style>
+
+    /*  HERO  */
+    .page-hero {
+      background: linear-gradient(135deg, var(--vert-dark) 0%, var(--vert) 100%);
+      color: var(--blanc-pur);
+      padding: 4rem 1.5rem 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(45deg, transparent, transparent 40px, rgba(255,255,255,0.02) 40px, rgba(255,255,255,0.02) 80px);
+    }
+    .page-hero-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+    .breadcrumb {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .breadcrumb a { color: rgba(255,255,255,0.55); transition: color var(--transition); }
+    .breadcrumb a:hover { color: var(--olive); }
+    .breadcrumb span { color: rgba(255,255,255,0.3); }
+    .page-hero-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--olive);
+      background: rgba(153,153,51,0.15);
+      border: 1px solid rgba(153,153,51,0.4);
+      padding: 5px 14px;
+      border-radius: 100px;
+      margin-bottom: 1rem;
+    }
+    .page-hero h1 {
+      font-family: var(--font-titre);
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 800;
+      text-transform: uppercase;
+      line-height: 1.0;
+      margin-bottom: 1rem;
+    }
+    .page-hero h1 .accent { color: var(--olive); }
+    .page-hero-desc {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.78);
+      max-width: 560px;
+      line-height: 1.7;
+    }
+
+    /*  LAYOUT CONTACT  */
+    .contact-section { padding: 4rem 1.5rem 5rem; }
+    .contact-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    /*  INFOS CONTACT  */
+    .contact-infos { display: flex; flex-direction: column; gap: 1.5rem; }
+
+    .contact-card {
+      background: var(--blanc-pur);
+      border: 2px solid #e8e7e0;
+      border-radius: 10px;
+      padding: 1.5rem;
+      transition: border-color var(--transition), box-shadow var(--transition);
+    }
+    .contact-card:hover {
+      border-color: var(--vert);
+      box-shadow: 0 4px 16px rgba(0,102,51,0.08);
+    }
+    .contact-card-icon {
+      font-size: 1.8rem;
+      margin-bottom: 0.6rem;
+    }
+    .contact-card-title {
+      font-family: var(--font-titre);
+      font-size: 1rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--vert);
+      letter-spacing: 0.04em;
+      margin-bottom: 0.4rem;
+    }
+    .contact-card-value {
+      font-size: 0.88rem;
+      color: var(--noir);
+      line-height: 1.6;
+    }
+    .contact-card-value a {
+      color: var(--vert);
+      font-weight: 700;
+      transition: color var(--transition);
+    }
+    .contact-card-value a:hover { color: var(--olive); }
+    .contact-card-sub {
+      font-size: 0.75rem;
+      color: var(--gris);
+      margin-top: 0.3rem;
+    }
+
+    /* Garantie réponse */
+    .garantie-box {
+      background: var(--vert);
+      border-radius: 10px;
+      padding: 1.5rem;
+      color: var(--blanc-pur);
+    }
+    .garantie-box .contact-card-title { color: var(--olive); }
+    .garantie-box .contact-card-value { color: rgba(255,255,255,0.85); }
+
+    /* Univers disponibles */
+    .univers-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.8rem;
+    }
+    .pill {
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 100px;
+      background: rgba(255,255,255,0.12);
+      color: var(--blanc-pur);
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    /*  FORMULAIRE  */
+    .form-card {
+      background: var(--blanc-pur);
+      border: 2px solid #e8e7e0;
+      border-radius: 12px;
+      padding: 2.5rem;
+    }
+    .form-title {
+      font-family: var(--font-titre);
+      font-size: 1.6rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--vert);
+      margin-bottom: 0.3rem;
+    }
+    .form-subtitle {
+      font-size: 0.85rem;
+      color: var(--gris);
+      margin-bottom: 2rem;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem;
+    }
+    .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+    .form-group.full { grid-column: span 2; }
+
+    label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--noir);
+    }
+    label .required { color: var(--bronze); margin-left: 2px; }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    select,
+    textarea {
+      font-family: var(--font-corps);
+      font-size: 0.9rem;
+      color: var(--noir);
+      background: var(--blanc);
+      border: 1.5px solid #d8d7d0;
+      border-radius: var(--radius);
+      padding: 11px 14px;
+      width: 100%;
+      transition: border-color var(--transition), box-shadow var(--transition);
+      outline: none;
+      appearance: none;
+    }
+    input:focus, select:focus, textarea:focus {
+      border-color: var(--vert);
+      box-shadow: 0 0 0 3px rgba(0,102,51,0.08);
+    }
+    input::placeholder, textarea::placeholder { color: #b0afaa; }
+
+    select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236F7D74' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      padding-right: 36px;
+      cursor: pointer;
+    }
+
+    textarea { resize: vertical; min-height: 120px; line-height: 1.6; }
+
+    /* Checkboxes univers */
+    .checkbox-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 0.2rem;
+    }
+    .checkbox-label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--noir);
+      cursor: pointer;
+      background: var(--blanc);
+      border: 1.5px solid #d8d7d0;
+      border-radius: 100px;
+      padding: 6px 14px;
+      transition: all var(--transition);
+      text-transform: none;
+      letter-spacing: 0;
+      user-select: none;
+    }
+    .checkbox-label input[type="checkbox"] { display: none; }
+    .checkbox-label:has(input:checked) {
+      background: var(--vert);
+      color: var(--blanc-pur);
+      border-color: var(--vert);
+    }
+
+    /* RGPD */
+    .rgpd-group {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-top: 0.5rem;
+    }
+    .rgpd-group input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      min-width: 18px;
+      border: 1.5px solid #d8d7d0;
+      border-radius: 4px;
+      margin-top: 2px;
+      cursor: pointer;
+      accent-color: var(--vert);
+    }
+    .rgpd-group label {
+      font-size: 0.75rem;
+      font-weight: 400;
+      text-transform: none;
+      letter-spacing: 0;
+      color: var(--gris);
+      line-height: 1.5;
+      cursor: pointer;
+    }
+    .rgpd-group label a { color: var(--vert); }
+
+    /* Bouton submit */
+    .btn-submit {
+      width: 100%;
+      padding: 15px;
+      font-family: var(--font-corps);
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--blanc-pur);
+      background: var(--vert);
+      border: none;
+      border-radius: var(--radius);
+      cursor: pointer;
+      transition: background var(--transition), transform var(--transition);
+      margin-top: 0.5rem;
+    }
+    .btn-submit:hover { background: var(--vert-dark); transform: translateY(-1px); }
+    .btn-submit:active { transform: translateY(0); }
+
+    /* Message succès */
+    .form-success {
+      display: none;
+      background: rgba(0,102,51,0.08);
+      border: 2px solid var(--vert);
+      border-radius: 10px;
+      padding: 1.5rem;
+      text-align: center;
+      margin-top: 1rem;
+    }
+    .form-success.visible { display: block; }
+    .form-success .success-icon { font-size: 2.5rem; margin-bottom: 0.5rem; }
+    .form-success p { font-size: 0.9rem; color: var(--vert); font-weight: 700; }
+    .form-success small { font-size: 0.78rem; color: var(--gris); }
+
+    /* Message erreur champ */
+    .error-msg {
+      font-size: 0.72rem;
+      color: #c0392b;
+      display: none;
+    }
+    .form-group.error input,
+    .form-group.error select,
+    .form-group.error textarea {
+      border-color: #c0392b;
+    }
+    .form-group.error .error-msg { display: block; }
+
+    /*  RESPONSIVE  */
+    @media (max-width: 960px) {
+      .contact-inner { grid-template-columns: 1fr; }
+      .contact-infos { display: grid; grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 640px) {
+      .contact-infos { grid-template-columns: 1fr; }
+      .form-grid { grid-template-columns: 1fr; }
+      .form-group.full { grid-column: span 1; }
+      .form-card { padding: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="index.html" class="logo" aria-label="DC SKAT — Accueil">
+        <img src="logo.png" alt="DC SKAT — Distribution et Commerce Multisectoriel" />
+      </a>
+      <nav class="nav" aria-label="Navigation principale">
+        <a href="index.html">Accueil</a>
+        <a href="high-tech.html">High Tech</a>
+        <a href="cosmetiques.html">Cosmétiques</a>
+        <a href="medical.html">Médical</a>
+        <a href="destockage.html">Déstockage</a>
+        <a href="contact.html" class="nav-cta active">Demander un devis</a>
+      </nav>
+      <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false" id="burgerBtn">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <nav class="nav-mobile" id="navMobile" aria-label="Navigation mobile">
+      <a href="index.html">Accueil</a>
+      <a href="high-tech.html">High Tech</a>
+      <a href="cosmetiques.html">Cosmétiques</a>
+      <a href="medical.html">Médical</a>
+      <a href="destockage.html">Déstockage</a>
+      <a href="contact.html" class="nav-cta">Demander un devis</a>
+    </nav>
+  </header>
+
+  <!-- MAIN -->
+  <main>
+
+    <!-- HERO -->
+    <section class="page-hero">
+      <div class="page-hero-inner">
+        <div class="breadcrumb">
+          <a href="index.html">Accueil</a>
+          <span>›</span>
+          <strong>Contact & Devis</strong>
+        </div>
+        <div class="page-hero-label"> Devis gratuit — Réponse sous 24h</div>
+        <h1>Contact <span class="accent">&amp; Devis</span></h1>
+        <p class="page-hero-desc">
+          Besoin d'un devis personnalisé ? Remplissez le formulaire ci-dessous 
+          et notre équipe vous répond sous 24h. Sans engagement, sans frais.
+        </p>
+      </div>
+    </section>
+
+    <!-- SECTION CONTACT -->
+    <section class="contact-section">
+      <div class="contact-inner">
+
+        <!-- INFOS CONTACT -->
+        <aside class="contact-infos" aria-label="Informations de contact">
+
+          <div class="garantie-box">
+            <div class="contact-card-icon"></div>
+            <div class="contact-card-title">Réponse garantie sous 24h</div>
+            <div class="contact-card-value">Notre équipe traite chaque demande avec soin et vous répond rapidement, du lundi au vendredi.</div>
+            <div class="univers-pills">
+              <span class="pill"> High Tech</span>
+              <span class="pill"> Cosmétiques</span>
+              <span class="pill"> Médical</span>
+              <span class="pill">️ Déstockage</span>
+            </div>
+          </div>
+
+          <div class="contact-card">
+            <div class="contact-card-icon"></div>
+            <div class="contact-card-title">Email</div>
+            <div class="contact-card-value">
+              <a href="mailto:contact@dcskat.fr">contact@dcskat.fr</a>
+            </div>
+            <div class="contact-card-sub">Pour toute demande de devis ou information</div>
+          </div>
+
+          <div class="contact-card">
+            <div class="contact-card-icon"></div>
+            <div class="contact-card-title">Localisation</div>
+            <div class="contact-card-value">Île-de-France, France</div>
+            <div class="contact-card-sub">Livraison France entière — B2B & B2C</div>
+          </div>
+
+          <div class="contact-card">
+            <div class="contact-card-icon"></div>
+            <div class="contact-card-title">Informations légales</div>
+            <div class="contact-card-value">
+              DC SKAT — NAF 4690Z<br>
+              Distribution et Commerce Multisectoriel
+            </div>
+            <div class="contact-card-sub">
+              <a href="cgv.html">CGV</a> —
+              <a href="mentions-legales.html">Mentions légales</a> —
+              <a href="rgpd.html">RGPD</a>
+            </div>
+          </div>
+
+        </aside>
+
+        <!-- FORMULAIRE DEVIS -->
+        <div class="form-card" role="main">
+          <div class="form-title">Formulaire de devis</div>
+          <div class="form-subtitle">Tous les champs marqués <span style="color:var(--bronze)">*</span> sont obligatoires.</div>
+
+          <form id="devisForm" novalidate>
+            <div class="form-grid">
+
+              <!-- Prénom -->
+              <div class="form-group" id="group-prenom">
+                <label for="prenom">Prénom <span class="required">*</span></label>
+                <input type="text" id="prenom" name="prenom" placeholder="Votre prénom" autocomplete="given-name" />
+                <span class="error-msg">Veuillez saisir votre prénom.</span>
+              </div>
+
+              <!-- Nom -->
+              <div class="form-group" id="group-nom">
+                <label for="nom">Nom <span class="required">*</span></label>
+                <input type="text" id="nom" name="nom" placeholder="Votre nom" autocomplete="family-name" />
+                <span class="error-msg">Veuillez saisir votre nom.</span>
+              </div>
+
+              <!-- Email -->
+              <div class="form-group" id="group-email">
+                <label for="email">Email <span class="required">*</span></label>
+                <input type="email" id="email" name="email" placeholder="votre@email.com" autocomplete="email" />
+                <span class="error-msg">Veuillez saisir un email valide.</span>
+              </div>
+
+              <!-- Téléphone -->
+              <div class="form-group" id="group-tel">
+                <label for="tel">Téléphone</label>
+                <input type="tel" id="tel" name="tel" placeholder="06 XX XX XX XX" autocomplete="tel" />
+              </div>
+
+              <!-- Société -->
+              <div class="form-group" id="group-societe">
+                <label for="societe">Société / Organisation</label>
+                <input type="text" id="societe" name="societe" placeholder="Nom de votre société (optionnel)" autocomplete="organization" />
+              </div>
+
+              <!-- Type de client -->
+              <div class="form-group" id="group-type">
+                <label for="type">Vous êtes <span class="required">*</span></label>
+                <select id="type" name="type">
+                  <option value="" disabled selected>Sélectionner...</option>
+                  <option value="professionnel">Professionnel (B2B)</option>
+                  <option value="particulier">Particulier (B2C)</option>
+                  <option value="revendeur">Revendeur / E-commerçant</option>
+                  <option value="autre">Autre</option>
+                </select>
+                <span class="error-msg">Veuillez sélectionner votre profil.</span>
+              </div>
+
+              <!-- Univers concernés -->
+              <div class="form-group full">
+                <label>Univers concerné(s) <span class="required">*</span></label>
+                <div class="checkbox-group" id="univers-group">
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="univers" value="hightech" />
+                     High Tech
+                  </label>
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="univers" value="cosmetiques" />
+                     Cosmétiques
+                  </label>
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="univers" value="medical" />
+                     Médical & Paramédical
+                  </label>
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="univers" value="destockage" />
+                    ️ Déstockage & Lots
+                  </label>
+                </div>
+                <span class="error-msg" id="univers-error">Veuillez sélectionner au moins un univers.</span>
+              </div>
+
+              <!-- Quantité estimée -->
+              <div class="form-group" id="group-quantite">
+                <label for="quantite">Quantité estimée</label>
+                <select id="quantite" name="quantite">
+                  <option value="" disabled selected>Sélectionner...</option>
+                  <option value="moins50">Moins de 50 unités</option>
+                  <option value="50-200">50 à 200 unités</option>
+                  <option value="200-500">200 à 500 unités</option>
+                  <option value="500-1000">500 à 1 000 unités</option>
+                  <option value="plus1000">Plus de 1 000 unités</option>
+                  <option value="palette">Par palette(s)</option>
+                </select>
+              </div>
+
+              <!-- Budget -->
+              <div class="form-group" id="group-budget">
+                <label for="budget">Budget indicatif</label>
+                <select id="budget" name="budget">
+                  <option value="" disabled selected>Sélectionner...</option>
+                  <option value="moins500">Moins de 500 €</option>
+                  <option value="500-2000">500 € à 2 000 €</option>
+                  <option value="2000-5000">2 000 € à 5 000 €</option>
+                  <option value="5000-10000">5 000 € à 10 000 €</option>
+                  <option value="plus10000">Plus de 10 000 €</option>
+                </select>
+              </div>
+
+              <!-- Message -->
+              <div class="form-group full" id="group-message">
+                <label for="message">Votre demande <span class="required">*</span></label>
+                <textarea id="message" name="message" placeholder="Décrivez votre besoin : produits recherchés, quantités, délais, conditions particulières..."></textarea>
+                <span class="error-msg">Veuillez décrire votre demande.</span>
+              </div>
+
+              <!-- RGPD -->
+              <div class="form-group full">
+                <div class="rgpd-group">
+                  <input type="checkbox" id="rgpd" name="rgpd" required />
+                  <label for="rgpd">
+                    J'accepte que mes données soient utilisées pour traiter ma demande de devis, conformément à la 
+                    <a href="rgpd.html">politique de confidentialité</a> de DC SKAT. Aucune donnée ne sera transmise à des tiers. <span class="required">*</span>
+                  </label>
+                </div>
+                <span class="error-msg" id="rgpd-error">Vous devez accepter la politique de confidentialité.</span>
+              </div>
+
+            </div>
+
+            <button type="submit" class="btn-submit">
+               Envoyer ma demande de devis
+            </button>
+
+            <!-- Message de succès -->
+            <div class="form-success" id="formSuccess" role="alert" aria-live="polite">
+              <div class="success-icon"></div>
+              <p>Votre demande a bien été envoyée !</p>
+              <small>Notre équipe vous répondra sous 24h à l'adresse email indiquée.</small>
+            </div>
+
+          </form>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="logo.png" alt="DC SKAT" style="width:200px;height:auto;margin-bottom:0.8rem;display:block;" />
+          <p class="footer-desc">Grossiste multisectoriel basé en Île-de-France. Spécialiste du High Tech, Cosmétiques, Médical & Paramédical et Déstockage. B2B & B2C.</p>
+          <div class="footer-contact">
+            <div> <a href="mailto:contact@dcskat.fr">contact@dcskat.fr</a></div>
+            <div> Île-de-France, France</div>
+            <div> NAF 4690Z</div>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Nos univers</h4>
+          <ul>
+            <li><a href="high-tech.html">High Tech</a></li>
+            <li><a href="cosmetiques.html">Cosmétiques</a></li>
+            <li><a href="medical.html">Médical & Paramédical</a></li>
+            <li><a href="destockage.html">Déstockage & Lots</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Boutiques en ligne</h4>
+          <ul>
+            <li><a href="https://hightech.dcskat.fr" target="_blank" rel="noopener">High Tech Shop</a></li>
+            <li><a href="https://cosmetiques.dcskat.fr" target="_blank" rel="noopener">Cosmétiques Shop</a></li>
+            <li><a href="https://medical.dcskat.fr" target="_blank" rel="noopener">Médical Shop</a></li>
+            <li><a href="https://destockage.dcskat.fr" target="_blank" rel="noopener">Déstockage Shop</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Informations</h4>
+          <ul>
+            <li><a href="contact.html">Contact & Devis</a></li>
+            <li><a href="cgv.html">CGV</a></li>
+            <li><a href="mentions-legales.html">Mentions légales</a></li>
+            <li><a href="rgpd.html">Politique RGPD</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 DC SKAT — Distribution et Commerce Multisectoriel. Tous droits réservés.</p>
+        <nav class="footer-legal" aria-label="Liens légaux">
+          <a href="cgv.html">CGV</a>
+          <a href="mentions-legales.html">Mentions légales</a>
+          <a href="rgpd.html">RGPD</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script commun -->
+  <script src="main.js"></script>
+
+  <!-- Script formulaire -->
+  <script>
+    const form = document.getElementById('devisForm');
+    const formSuccess = document.getElementById('formSuccess');
+
+    // Validation champ individuel
+    function validateField(id, condition) {
+      const group = document.getElementById('group-' + id);
+      if (!group) return condition;
+      if (!condition) {
+        group.classList.add('error');
+      } else {
+        group.classList.remove('error');
+      }
+      return condition;
+    }
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      let valid = true;
+
+      // Validation champs obligatoires
+      valid = validateField('prenom',  document.getElementById('prenom').value.trim().length > 0) && valid;
+      valid = validateField('nom',     document.getElementById('nom').value.trim().length > 0) && valid;
+      valid = validateField('email',   /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(document.getElementById('email').value.trim())) && valid;
+      valid = validateField('type',    document.getElementById('type').value !== '') && valid;
+      valid = validateField('message', document.getElementById('message').value.trim().length > 10) && valid;
+
+      // Validation univers
+      const universCoches = document.querySelectorAll('input[name="univers"]:checked');
+      const universError = document.getElementById('univers-error');
+      if (universCoches.length === 0) {
+        universError.style.display = 'block';
+        valid = false;
+      } else {
+        universError.style.display = 'none';
+      }
+
+      // Validation RGPD
+      const rgpd = document.getElementById('rgpd');
+      const rgpdError = document.getElementById('rgpd-error');
+      if (!rgpd.checked) {
+        rgpdError.style.display = 'block';
+        valid = false;
+      } else {
+        rgpdError.style.display = 'none';
+      }
+
+      if (valid) {
+        form.style.opacity = '0.5';
+        form.style.pointerEvents = 'none';
+
+        const formData = new FormData(form);
+
+        fetch('https://formspree.io/f/xgobjqjp', {
+          method: 'POST',
+          body: formData,
+          headers: { 'Accept': 'application/json' }
+        })
+        .then(response => {
+          form.style.opacity = '1';
+          form.style.pointerEvents = 'auto';
+          if (response.ok) {
+            formSuccess.classList.add('visible');
+            form.reset();
+            formSuccess.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          } else {
+            alert('Une erreur est survenue. Veuillez réessayer ou nous contacter directement à contact@dcskat.fr');
+          }
+        })
+        .catch(() => {
+          form.style.opacity = '1';
+          form.style.pointerEvents = 'auto';
+          alert('Une erreur est survenue. Veuillez réessayer ou nous contacter directement à contact@dcskat.fr');
+        });
+      }
+    });
+
+    // Supprimer erreur à la saisie
+    document.querySelectorAll('input, select, textarea').forEach(el => {
+      el.addEventListener('input', () => {
+        const group = el.closest('.form-group');
+        if (group) group.classList.remove('error');
+      });
+    });
+  </script>
+
+</body>
+</html>
