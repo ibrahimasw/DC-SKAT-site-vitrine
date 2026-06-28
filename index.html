@@ -100,11 +100,23 @@
       color: inherit;
     }
     .hero-card:hover { background: #f5f5f0; border-color: var(--olive); }
-    .hero-card.featured { grid-column: span 2; background: rgba(175,137,50,0.08); border-color: rgba(175,137,50,0.3); }
+    .hero-card.featured {
+      grid-column: span 2;
+      background: rgba(175,137,50,0.08);
+      border-color: rgba(175,137,50,0.3);
+      padding: 0.9rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+    }
     .hero-card .hc-icon { font-size: 2.2rem; margin-bottom: 0.6rem; }
+    .hero-card.featured .hc-icon { font-size: 1.4rem; margin-bottom: 0; }
     .hero-card .hc-name { font-family: var(--font-titre); font-size: 1rem; font-weight: 700; text-transform: uppercase; color: var(--vert); }
     .hero-card .hc-price { font-size: 0.75rem; color: var(--olive); margin-top: 4px; font-weight: 700; }
-    .hero-card.featured .hc-name { font-size: 1.15rem; color: var(--olive); }
+    .hero-card.featured .hc-name { font-size: 1.05rem; color: var(--olive); }
+    .hero-card.featured .hc-price { margin-top: 2px; font-size: 0.78rem; }
+    .hero-card.featured .hc-text { text-align: left; }
 
     /*  UNIVERS  */
     .univers-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.2rem; }
@@ -233,9 +245,11 @@
         </div>
         <div class="hero-visual" aria-hidden="true">
           <a href="destockage.html" class="hero-card featured">
-            <div class="hc-icon">️</div>
-            <div class="hc-name">Déstockage &amp; Lots</div>
-            <div class="hc-price">Jusqu'à −70% sur les surstocks</div>
+            <div class="hc-icon">🏷️</div>
+            <div class="hc-text">
+              <div class="hc-name">Déstockage &amp; Lots</div>
+              <div class="hc-price">Jusqu'à −70% sur les surstocks</div>
+            </div>
           </a>
           <a href="high-tech.html" class="hero-card"><div class="hc-icon"></div><div class="hc-name">High Tech</div><div class="hc-price">Dès 1,50 €/u</div></a>
           <a href="cosmetiques.html" class="hero-card"><div class="hc-icon"></div><div class="hc-name">Cosmétiques</div><div class="hc-price">Dès 2 €/u</div></a>
