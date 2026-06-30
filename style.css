@@ -3,7 +3,69 @@
    Design premium — Vert #00512c, Or #af8932, Blanc dominant
    ════════════════════════════════════════════════════ */
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600&display=swap');
+@font-face {
+  font-family: 'Armature';
+  src: url('assets/fonts/Armature-Thin.woff2') format('woff2');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Armature';
+  src: url('assets/fonts/Armature-ThinItalic.woff2') format('woff2');
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Armature';
+  src: url('assets/fonts/Armature-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Armature';
+  src: url('assets/fonts/Armature-Italic.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Armature';
+  src: url('assets/fonts/Armature-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Armature';
+  src: url('assets/fonts/Armature-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Armature';
+  src: url('assets/fonts/Armature-BoldItalic.woff2') format('woff2');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Armature';
+  src: url('assets/fonts/Armature-ExtraBold.woff2') format('woff2');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Armature';
+  src: url('assets/fonts/Armature-ExtraBoldItalic.woff2') format('woff2');
+  font-weight: 800;
+  font-style: italic;
+  font-display: swap;
+}
 
 :root {
   --vert:        #00512c;
@@ -25,8 +87,8 @@
   --olive:       #af8932;
   --blanc-pur:   #ffffff;
 
-  --font-titre:  'Poppins', sans-serif;
-  --font-corps:  'Inter', sans-serif;
+  --font-titre:  'Armature', sans-serif;
+  --font-corps:  'Armature', sans-serif;
   --radius:      8px;
   --radius-lg:   16px;
   --radius-xl:   24px;
