@@ -4,197 +4,391 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="DC SKAT — Grossiste multisectoriel : High Tech, Cosmétiques, Médical & Paramédical, Déstockage & Lots. B2B & B2C — Île-de-France." />
-  <meta name="theme-color" content="#006633" />
+  <meta name="theme-color" content="#00512c" />
   <title>DC SKAT — Distribution et Commerce Multisectoriel</title>
-
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet" />
-
-  <!-- Feuille de style commune -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
-
-  <!-- CSS spécifique à la page d'accueil -->
   <style>
-    /*  HERO  */
+
+    /* ══ HERO ══════════════════════════════════════════════ */
     .hero {
-      background: var(--blanc-pur);
-      color: var(--vert);
-      border-bottom: 1px solid #e2e1d8;
-      padding: 5rem 1.5rem 4rem;
+      background: var(--blanc);
+      padding: 6rem 2rem 5rem;
       position: relative;
       overflow: hidden;
     }
+    .hero-flow { position: absolute; inset: 0; pointer-events: none; z-index: 0; overflow: hidden; }
+    .hero-flow .pkg {
+      position: absolute;
+      width: 7px; height: 7px;
+      border-radius: 2px;
+      animation: flowAcross linear infinite;
+    }
+    .hero-flow .pkg.gold { background: var(--or); box-shadow: 0 0 0 3px rgba(175,137,50,0.12); }
+    .hero-flow .pkg.green { background: var(--vert); box-shadow: 0 0 0 3px rgba(0,81,44,0.1); }
+    .hero-flow .pkg:nth-child(5)  { top: 18%; width: 8px; height: 8px; animation-duration: 11s; animation-delay: 0s; }
+    .hero-flow .pkg:nth-child(6)  { top: 18%; width: 5px; height: 5px; animation-duration: 14s; animation-delay: -4s; }
+    .hero-flow .pkg:nth-child(7)  { top: 42%; width: 6px; height: 6px; animation-duration: 12.5s; animation-delay: -2s; }
+    .hero-flow .pkg:nth-child(8)  { top: 42%; width: 9px; height: 9px; animation-duration: 16s; animation-delay: -7s; }
+    .hero-flow .pkg:nth-child(9)  { top: 64%; width: 6px; height: 6px; animation-duration: 13s; animation-delay: -5.5s; }
+    .hero-flow .pkg:nth-child(10) { top: 64%; width: 7px; height: 7px; animation-duration: 10.5s; animation-delay: -1s; }
+    .hero-flow .pkg:nth-child(11) { top: 86%; width: 5px; height: 5px; animation-duration: 15s; animation-delay: -9s; }
+    .hero-flow .pkg:nth-child(12) { top: 86%; width: 8px; height: 8px; animation-duration: 12s; animation-delay: -3s; }
+    .hero-flow .pkg:nth-child(13) { top: 8%;  width: 6px; height: 6px; animation-duration: 13.5s; animation-delay: -6s; }
+    .hero-flow .pkg:nth-child(14) { top: 30%; width: 7px; height: 7px; animation-duration: 11.5s; animation-delay: -8s; }
+    .hero-flow .pkg:nth-child(15) { top: 53%; width: 5px; height: 5px; animation-duration: 14.5s; animation-delay: -2.5s; }
+    .hero-flow .pkg:nth-child(16) { top: 75%; width: 6px; height: 6px; animation-duration: 12s; animation-delay: -10s; }
+    .hero-flow .pkg:nth-child(17) { top: 24%; width: 5px; height: 5px; animation-duration: 13s;   animation-delay: -1.2s; }
+    .hero-flow .pkg:nth-child(18) { top: 48%; width: 8px; height: 8px; animation-duration: 15.5s; animation-delay: -5s; }
+    .hero-flow .pkg:nth-child(19) { top: 70%; width: 6px; height: 6px; animation-duration: 11s;   animation-delay: -7.5s; }
+    .hero-flow .pkg:nth-child(20) { top: 92%; width: 7px; height: 7px; animation-duration: 14s;   animation-delay: -3.8s; }
+    @keyframes flowAcross {
+      0%   { left: -3%; opacity: 0; }
+      8%   { opacity: 0.85; }
+      92%  { opacity: 0.85; }
+      100% { left: 103%; opacity: 0; }
+    }
+    /* Cercle décoratif vert en arrière-plan */
     .hero::before {
       content: '';
       position: absolute;
-      inset: 0;
-      display: none;
+      top: -200px; right: -200px;
+      width: 600px; height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(0,81,44,0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -100px; left: -100px;
+      width: 400px; height: 400px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(175,137,50,0.05) 0%, transparent 70%);
+      pointer-events: none;
     }
     .hero-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-      align-items: center;
-      position: relative;
-      z-index: 1;
+      max-width: 1280px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 480px;
+      gap: 4rem; align-items: flex-start;
+      position: relative; z-index: 1;
     }
-    .hero-label {
-      display: inline-block;
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--olive);
-      background: rgba(153,153,51,0.15);
-      border: 1px solid rgba(153,153,51,0.4);
-      padding: 5px 14px;
-      border-radius: 100px;
-      margin-bottom: 1.2rem;
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--vert-light);
+      border: 1px solid var(--vert-mid);
+      color: var(--vert);
+      font-size: 0.72rem; font-weight: 700;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      padding: 6px 16px; border-radius: 100px;
+      margin-bottom: 1.5rem;
     }
+    .hero-eyebrow span { width: 6px; height: 6px; border-radius: 50%; background: var(--vert); display: block; }
     .hero h1 {
       font-family: var(--font-titre);
       font-size: clamp(2.8rem, 5vw, 4.8rem);
       font-weight: 800;
-      text-transform: uppercase;
-      line-height: 1.0;
-      margin-bottom: 1.2rem;
+      line-height: 1.05;
+      color: var(--texte);
+      margin-bottom: 1.5rem;
     }
-    .hero h1 .accent { color: var(--olive); }
+    .hero h1 .accent { color: var(--or); position: relative; display: inline-block; }
+    .hero h1 .accent::after {
+      content: '';
+      position: absolute;
+      bottom: 4px; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--or), transparent);
+      border-radius: 2px;
+    }
     .hero-desc {
-      font-size: 1rem;
-      color: var(--gris);
-      line-height: 1.7;
-      margin-bottom: 2rem;
-      max-width: 480px;
+      font-size: 1.05rem; color: var(--texte-sec);
+      line-height: 1.75; margin-bottom: 2.5rem; max-width: 520px;
     }
     .hero-stats {
-      display: flex;
-      gap: 2rem;
-      margin-top: 2.5rem;
-      padding-top: 2rem;
-      border-top: 1px solid #e2e1d8;
+      display: flex; gap: 0;
+      margin-top: 3rem; padding-top: 2rem;
+      border-top: 1px solid var(--gris-bord);
     }
-    .stat-item { display: flex; flex-direction: column; }
-    .stat-val {
+    .hero-stat {
+      flex: 1; display: flex; flex-direction: column;
+      padding-right: 2rem;
+      border-right: 1px solid var(--gris-bord);
+      margin-right: 2rem;
+    }
+    .hero-stat:last-child { border-right: none; margin-right: 0; }
+    .hero-stat-val {
       font-family: var(--font-titre);
-      font-size: 2rem;
-      font-weight: 800;
-      color: var(--olive);
-      line-height: 1;
+      font-size: 2.2rem; font-weight: 800;
+      color: var(--vert); line-height: 1;
     }
-    .stat-label { font-size: 0.75rem; color: var(--gris); margin-top: 2px; text-transform: uppercase; letter-spacing: 0.06em; }
+    .hero-stat-label { font-size: 0.72rem; color: var(--texte-sec); margin-top: 4px; text-transform: uppercase; letter-spacing: 0.06em; }
 
-    .hero-visual { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; }
+    /* Hero cards */
+    .hero-cards { display: flex; flex-direction: column; gap: 1.1rem; }
     .hero-card {
       background: var(--blanc);
-      border: 1px solid #e2e1d8;
-      border-radius: 10px;
-      padding: 1.4rem 1rem;
-      text-align: center;
-      transition: background var(--transition), border-color var(--transition);
-      text-decoration: none;
-      color: inherit;
+      border: 1.5px solid var(--gris-bord);
+      border-radius: var(--radius-lg);
+      padding: 1.1rem 1.3rem;
+      display: flex; align-items: center; gap: 1.1rem;
+      text-decoration: none; color: inherit;
+      transition: all var(--transition);
+      position: relative; overflow: hidden;
     }
-    .hero-card:hover { background: #f5f5f0; border-color: var(--olive); }
-    .hero-card.featured {
-      grid-column: span 2;
-      background: rgba(175,137,50,0.08);
-      border-color: rgba(175,137,50,0.3);
-      padding: 0.9rem 1.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 1rem;
+    .hero-card::before {
+      content: '';
+      position: absolute; left: 0; top: 0; bottom: 0;
+      width: 4px;
+      background: var(--vert);
+      border-radius: 0 2px 2px 0;
+      transform: scaleY(0);
+      transition: transform var(--transition);
+      transform-origin: bottom;
     }
-    .hero-card .hc-icon { font-size: 2.2rem; margin-bottom: 0.6rem; }
-    .hero-card.featured .hc-icon { font-size: 1.4rem; margin-bottom: 0; }
-    .hero-card .hc-name { font-family: var(--font-titre); font-size: 1rem; font-weight: 700; text-transform: uppercase; color: var(--vert); }
-    .hero-card .hc-price { font-size: 0.75rem; color: var(--olive); margin-top: 4px; font-weight: 700; }
-    .hero-card.featured .hc-name { font-size: 1.05rem; color: var(--olive); }
-    .hero-card.featured .hc-price { margin-top: 2px; font-size: 0.78rem; }
-    .hero-card.featured .hc-text { text-align: left; }
+    .hero-card:hover { border-color: var(--vert); box-shadow: var(--shadow-vert); transform: translateX(4px); }
+    .hero-card:hover::before { transform: scaleY(1); }
+    .hero-card.featured { border-color: rgba(175,137,50,0.3); background: var(--or-light); }
+    .hero-card.featured::before { background: var(--or); }
+    .hero-card.featured:hover { border-color: var(--or); box-shadow: 0 8px 32px rgba(175,137,50,0.2); }
+    .hc-icon-wrap {
+      width: 42px; height: 42px; border-radius: 10px;
+      background: var(--vert-light);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .hero-card.featured .hc-icon-wrap { background: rgba(175,137,50,0.15); }
+    .hc-icon {
+      width: 21px; height: 21px;
+    }
+    .hc-body { flex: 1; }
+    .hc-label { font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--texte-sec); }
+    .hc-name { font-family: var(--font-titre); font-size: 1.05rem; font-weight: 700; color: var(--texte); margin-top: 2px; }
+    .hc-price { font-size: 0.85rem; font-weight: 700; color: var(--or); margin-top: 3px; }
+    .hero-card.featured .hc-label { color: var(--or-dark); }
+    .hero-card.featured .hc-name { color: var(--texte); }
+    .hc-arrow { width: 18px; height: 18px; flex-shrink: 0; color: var(--gris); transition: transform var(--transition); }
+    .hero-card:hover .hc-arrow { transform: translateX(4px); color: var(--vert); }
+    .hero-card.featured:hover .hc-arrow { color: var(--or); }
 
-    /*  UNIVERS  */
-    .univers-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.2rem; }
+    /* ══ UNIVERS ════════════════════════════════════════════ */
+    .section-univers { background: var(--off-white); }
+    .univers-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1.5rem; }
     .univers-card {
-      background: var(--blanc-pur);
-      border: 2px solid #e8e7e0;
-      border-radius: 10px;
+      background: var(--blanc);
+      border: 1.5px solid var(--gris-bord);
+      border-radius: var(--radius-xl);
       overflow: hidden;
-      transition: border-color var(--transition), box-shadow var(--transition), transform var(--transition);
-      text-decoration: none;
-      color: inherit;
-      display: flex;
-      flex-direction: column;
+      text-decoration: none; color: inherit;
+      display: flex; flex-direction: column;
+      transition: all 0.3s ease;
+      position: relative;
     }
-    .univers-card:hover { border-color: var(--vert); box-shadow: 0 8px 28px rgba(0,102,51,0.12); transform: translateY(-4px); }
-    .uc-top { background: var(--vert); padding: 1.5rem 1.5rem 1.5rem; display: flex; flex-direction: column; align-items: flex-start; gap: 0.5rem; min-height: 100px; }
-    .uc-icon { display: none; }
-    .uc-top.olive  { background: var(--olive); }
-    .uc-top.gris   { background: var(--gris); }
-    .uc-top.bronze { background: var(--bronze); }
-    .uc-icon { font-size: 2.4rem; }
-    .uc-badge { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.7); background: rgba(255,255,255,0.15); padding: 3px 10px; border-radius: 100px; }
-    .uc-body { padding: 1.2rem 1.5rem 1.5rem; flex: 1; display: flex; flex-direction: column; gap: 0.6rem; }
-    .uc-name { font-family: var(--font-titre); font-size: 1.15rem; font-weight: 800; text-transform: uppercase; color: var(--vert); }
-    .uc-desc { font-size: 0.82rem; color: var(--gris); line-height: 1.55; }
-    .uc-price { font-size: 0.78rem; font-weight: 700; color: var(--olive); margin-top: auto; padding-top: 0.6rem; }
-    .uc-link { font-size: 0.8rem; font-weight: 700; color: var(--vert); margin-top: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; }
-    .uc-link::after { content: ' →'; transition: transform var(--transition); display: inline-block; }
-    .univers-card:hover .uc-link::after { transform: translateX(4px); }
+    .univers-card::after {
+      content: '';
+      position: absolute; inset: 0;
+      border-radius: var(--radius-xl);
+      border: 2px solid transparent;
+      transition: border-color 0.3s ease;
+      pointer-events: none;
+    }
+    .univers-card:hover { transform: translateY(-6px); box-shadow: 0 20px 48px rgba(0,0,0,0.1); }
+    .univers-card:hover::after { border-color: var(--vert); }
 
-    /*  ARGUMENTS  */
-    .section-args { background: var(--blanc-pur); color: var(--noir); border-top: 1px solid #e2e1d8; border-bottom: 1px solid #e2e1d8; }
-    .section-args .section-title { color: var(--vert); }
-    .section-args .section-eyebrow { color: var(--olive); }
-    .args-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
-    .arg-item { display: flex; flex-direction: column; gap: 0.6rem; }
-    .arg-title { font-family: var(--font-titre); font-size: 1.1rem; font-weight: 800; text-transform: uppercase; color: var(--vert); }
-    .arg-desc { font-size: 0.85rem; color: var(--gris); line-height: 1.6; }
+    .uc-header {
+      padding: 2rem 1.8rem 1.5rem;
+      display: flex; flex-direction: column; gap: 1rem;
+    }
+    .uc-header-vert   { background: linear-gradient(135deg, var(--vert), #006b3a); }
+    .uc-header-or     { background: linear-gradient(135deg, var(--or), #c9a050); }
+    .uc-header-gris   { background: linear-gradient(135deg, #4a6b57, #6b8a77); }
+    .uc-header-bronze { background: linear-gradient(135deg, var(--bronze), #a07c30); }
 
-    /*  MARKETPLACES  */
-    .mp-grid { display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; margin-top: 2rem; }
-    .mp-badge { background: var(--blanc-pur); border: 2px solid #e8e7e0; border-radius: var(--radius); padding: 10px 20px; font-size: 0.85rem; font-weight: 700; display: flex; align-items: center; gap: 8px; transition: border-color var(--transition), box-shadow var(--transition); }
-    .mp-badge:hover { border-color: var(--vert); box-shadow: var(--shadow); }
-    .mp-badge .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--vert); }
+    .uc-icon-svg {
+      width: 48px; height: 48px;
+      background: rgba(255,255,255,0.15);
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .uc-icon-svg svg { width: 24px; height: 24px; color: white; fill: none; stroke: white; stroke-width: 1.8; }
+    .uc-badge-top {
+      display: inline-flex; align-items: center; gap: 4px;
+      background: rgba(255,255,255,0.2);
+      color: rgba(255,255,255,0.9);
+      font-size: 0.65rem; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      padding: 4px 10px; border-radius: 100px;
+      align-self: flex-start;
+    }
+    .uc-badge-top::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: rgba(255,255,255,0.8); }
 
-    /*  CTA  */
-    .section-cta { border-top: 1px solid #e2e1d8; }
-    .cta-box { background: var(--vert-dark); border-radius: 14px; padding: 3.5rem 3rem; display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
-    .cta-title { font-family: var(--font-titre); font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 800; text-transform: uppercase; color: var(--blanc-pur); line-height: 1.1; }
-    .cta-title span { color: var(--olive); }
-    .cta-text p { font-size: 0.9rem; color: rgba(255,255,255,0.6); margin-top: 0.5rem; }
+    .uc-body { padding: 1.5rem 1.8rem 1.8rem; flex: 1; display: flex; flex-direction: column; gap: 0.6rem; }
+    .uc-name {
+      font-family: var(--font-titre); font-size: 1.2rem; font-weight: 700;
+      color: var(--texte); line-height: 1.2;
+    }
+    .uc-desc { font-size: 0.83rem; color: var(--texte-sec); line-height: 1.6; }
+    .uc-price {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 0.8rem; font-weight: 700; color: var(--or);
+      margin-top: 0.4rem;
+    }
+    .uc-price::before { content: ''; width: 3px; height: 3px; border-radius: 50%; background: var(--or); }
+    .uc-footer {
+      margin-top: auto; padding-top: 1rem;
+      border-top: 1px solid var(--gris-bord);
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .uc-link {
+      font-size: 0.8rem; font-weight: 700; color: var(--vert);
+      display: flex; align-items: center; gap: 6px;
+      letter-spacing: 0.02em;
+    }
+    .uc-link svg { width: 14px; height: 14px; transition: transform var(--transition); fill: none; stroke: currentColor; stroke-width: 2; }
+    .univers-card:hover .uc-link svg { transform: translateX(4px); }
 
-    /*  RESPONSIVE PAGE D'ACCUEIL  */
+    /* ══ ARGUMENTS ══════════════════════════════════════════ */
+    .section-args { background: var(--blanc); }
+    .args-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2rem; }
+    .arg-card {
+      padding: 1.8rem;
+      border: 1.5px solid var(--gris-bord);
+      border-radius: var(--radius-lg);
+      background: var(--blanc);
+      transition: all var(--transition);
+      position: relative; overflow: hidden;
+    }
+    .arg-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--vert), var(--or));
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+      transform-origin: left;
+    }
+    .arg-card:hover { border-color: var(--vert-mid); box-shadow: var(--shadow); transform: translateY(-2px); }
+    .arg-card:hover::before { transform: scaleX(1); }
+    .arg-icon {
+      width: 48px; height: 48px; border-radius: 12px;
+      background: var(--vert-light);
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 1.2rem;
+    }
+    .arg-icon svg { width: 22px; height: 22px; fill: none; stroke: var(--vert); stroke-width: 2; }
+    .arg-title { font-family: var(--font-titre); font-size: 1rem; font-weight: 700; color: var(--texte); margin-bottom: 0.5rem; }
+    .arg-desc { font-size: 0.83rem; color: var(--texte-sec); line-height: 1.65; }
+
+    /* ══ MARKETPLACES ═══════════════════════════════════════ */
+    .section-mp { background: var(--off-white); }
+    .mp-grid {
+      display: grid; grid-template-columns: repeat(5,1fr);
+      gap: 1rem; margin-top: 2.5rem;
+    }
+    .mp-card {
+      background: var(--blanc);
+      border: 1.5px solid var(--gris-bord);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem 1rem;
+      display: flex; flex-direction: column; align-items: center; gap: 0.8rem;
+      transition: all var(--transition); text-align: center;
+    }
+    .mp-card:hover { border-color: var(--vert); box-shadow: var(--shadow); transform: translateY(-3px); }
+    .mp-logo {
+      width: 48px; height: 48px; border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-titre); font-size: 0.7rem; font-weight: 800;
+      color: var(--blanc); letter-spacing: -0.02em;
+    }
+    .mp-logo img { width: 24px; height: 24px; filter: brightness(0) invert(1); }
+    .mp-logo.amazon   { background: #FF9900; }
+    .mp-logo.cdiscount { background: var(--blanc); border: 1.5px solid var(--gris-bord); }
+    .mp-logo.ebay     { background: #E53238; }
+    .mp-logo.rakuten  { background: #BF0000; }
+    .mp-logo.fnac     { background: #F6A500; }
+    .mp-name { font-size: 0.78rem; font-weight: 700; color: var(--texte); }
+    .mp-status {
+      display: inline-flex; align-items: center; gap: 4px;
+      font-size: 0.65rem; font-weight: 700; color: #059669;
+      background: #d1fae5; padding: 2px 8px; border-radius: 100px;
+    }
+    .mp-status::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: #059669; }
+
+    /* ══ CTA ════════════════════════════════════════════════ */
+    .section-cta { background: var(--blanc); }
+    .cta-box {
+      background: linear-gradient(135deg, var(--vert-dark) 0%, var(--vert) 100%);
+      border-radius: var(--radius-xl);
+      padding: 4rem 3.5rem;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 2rem; flex-wrap: wrap;
+      position: relative; overflow: hidden;
+    }
+    .cta-box::before {
+      content: '';
+      position: absolute; top: -80px; right: -80px;
+      width: 300px; height: 300px; border-radius: 50%;
+      background: rgba(175,137,50,0.12);
+      pointer-events: none;
+    }
+    .cta-box::after {
+      content: '';
+      position: absolute; bottom: -60px; left: 30%;
+      width: 200px; height: 200px; border-radius: 50%;
+      background: rgba(255,255,255,0.04);
+      pointer-events: none;
+    }
+    .cta-content { position: relative; z-index: 1; }
+    .cta-eyebrow {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(175,137,50,0.25);
+      color: var(--or);
+      font-size: 0.68rem; font-weight: 700;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      padding: 5px 14px; border-radius: 100px;
+      margin-bottom: 1.2rem;
+    }
+    .cta-title {
+      font-family: var(--font-titre);
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      font-weight: 800; color: var(--blanc);
+      line-height: 1.1; margin-bottom: 0.6rem;
+    }
+    .cta-title span { color: var(--or); }
+    .cta-sub { font-size: 0.9rem; color: rgba(255,255,255,0.65); }
+    .cta-actions { display: flex; gap: 1rem; flex-wrap: wrap; position: relative; z-index: 1; }
+
+    /* ══ ANIMATIONS ═════════════════════════════════════════ */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .reveal { opacity: 0; transition: opacity 0.6s ease, transform 0.6s ease; transform: translateY(24px); }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ══ RESPONSIVE ═════════════════════════════════════════ */
     @media (max-width: 1024px) {
-      .univers-grid { grid-template-columns: repeat(2, 1fr); }
-      .args-grid    { grid-template-columns: repeat(2, 1fr); }
-    }
-    @media (max-width: 768px) {
-      .hero-inner  { grid-template-columns: 1fr; }
-      .hero-visual { display: none; }
-      .hero        { padding: 3.5rem 1.5rem 3rem; }
-      .cta-box     { flex-direction: column; text-align: center; }
-      .cta-box .btn-group { justify-content: center; }
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-cards { display: none; }
+      .univers-grid { grid-template-columns: repeat(2,1fr); }
+      .args-grid { grid-template-columns: repeat(2,1fr); }
+      .mp-grid { grid-template-columns: repeat(3,1fr); }
     }
     @media (max-width: 640px) {
+      .hero h1 { font-size: 2.4rem; }
+      .hero-stats { gap: 1.5rem; }
       .univers-grid { grid-template-columns: 1fr; }
-      .args-grid    { grid-template-columns: 1fr; }
-      .hero-stats   { gap: 1.2rem; }
+      .args-grid { grid-template-columns: 1fr; }
+      .mp-grid { grid-template-columns: repeat(2,1fr); }
+      .cta-box { padding: 2.5rem 1.8rem; flex-direction: column; }
     }
   </style>
 </head>
 <body>
 
-  
-
   <!-- HEADER -->
-    <!-- TICKER -->
-
   <header class="header">
     <div class="header-inner">
       <a href="index.html" class="logo" aria-label="DC SKAT — Accueil">
@@ -208,7 +402,7 @@
         <a href="destockage.html">Déstockage</a>
         <a href="contact.html" class="nav-cta">Demander un devis</a>
       </nav>
-      <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false" id="burgerBtn">
+      <button class="burger" id="burgerBtn" aria-label="Menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -222,124 +416,291 @@
     </nav>
   </header>
 
-  <!-- MAIN -->
   <main>
 
     <!-- HERO -->
     <section class="hero">
+      <div class="hero-flow">
+        <span class="pkg gold"></span><span class="pkg green"></span>
+        <span class="pkg green"></span><span class="pkg gold"></span>
+        <span class="pkg gold"></span><span class="pkg green"></span>
+        <span class="pkg green"></span><span class="pkg gold"></span>
+        <span class="pkg gold"></span><span class="pkg green"></span>
+        <span class="pkg green"></span><span class="pkg gold"></span>
+        <span class="pkg gold"></span><span class="pkg green"></span>
+        <span class="pkg green"></span><span class="pkg gold"></span>
+      </div>
       <div class="hero-inner">
         <div class="hero-content">
-          <span class="hero-label">Grossiste B2B &amp; B2C — Île-de-France</span>
-          <h1>Votre partenaire<br><span class="accent">multisectoriel</span><br>de confiance</h1>
+          <div class="hero-eyebrow">
+            <span></span>
+            Grossiste B2B &amp; B2C — Île-de-France
+          </div>
+          <h1>Votre partenaire <span class="accent">multisectoriel</span> de confiance</h1>
           <p class="hero-desc">DC SKAT distribue des produits High Tech, Cosmétiques, Médical &amp; Paramédical et propose des lots de déstockage à prix compétitifs, partout en France.</p>
           <div class="btn-group">
             <a href="contact.html" class="btn btn-primary">Demander un devis</a>
-            <a href="#univers" class="btn btn-secondary">Découvrir nos univers</a>
+            <a href="#univers" class="btn btn-outline-green">Découvrir nos univers</a>
           </div>
           <div class="hero-stats">
-            <div class="stat-item"><span class="stat-val">4</span><span class="stat-label">Univers produits</span></div>
-            <div class="stat-item"><span class="stat-val">5</span><span class="stat-label">Marketplaces</span></div>
-            <div class="stat-item"><span class="stat-val">−70%</span><span class="stat-label">Sur les lots</span></div>
-            <div class="stat-item"><span class="stat-val">B2B</span><span class="stat-label">&amp; B2C</span></div>
+            <div class="hero-stat">
+              <span class="hero-stat-val">4</span>
+              <span class="hero-stat-label">Univers produits</span>
+            </div>
+            <div class="hero-stat">
+              <span class="hero-stat-val">5</span>
+              <span class="hero-stat-label">Marketplaces</span>
+            </div>
+            <div class="hero-stat">
+              <span class="hero-stat-val">−70%</span>
+              <span class="hero-stat-label">Sur les lots</span>
+            </div>
+            <div class="hero-stat">
+              <span class="hero-stat-val">B2B</span>
+              <span class="hero-stat-label">&amp; B2C</span>
+            </div>
           </div>
         </div>
-        <div class="hero-visual" aria-hidden="true">
-          <a href="destockage.html" class="hero-card featured">
-            <div class="hc-icon">🏷️</div>
-            <div class="hc-text">
-              <div class="hc-name">Déstockage &amp; Lots</div>
-              <div class="hc-price">Jusqu'à −70% sur les surstocks</div>
+
+        <!-- Cards hero -->
+        <div class="hero-cards">
+          <a href="destockage.html" class="hero-card">
+            <div class="hc-icon-wrap">
+              <svg class="hc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--vert)"><path d="M3 8l9-5 9 5-9 5-9-5z"/><path d="M3 8v9l9 5 9-5V8"/><line x1="12" y1="13" x2="12" y2="22"/></svg>
             </div>
+            <div class="hc-body">
+              <div class="hc-label">Déstockage</div>
+              <div class="hc-name">Lots &amp; surstocks</div>
+              <div class="hc-price">Jusqu'à −70%</div>
+            </div>
+            <svg class="hc-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
-          <a href="high-tech.html" class="hero-card"><div class="hc-icon"></div><div class="hc-name">High Tech</div><div class="hc-price">Dès 1,50 €/u</div></a>
-          <a href="cosmetiques.html" class="hero-card"><div class="hc-icon"></div><div class="hc-name">Cosmétiques</div><div class="hc-price">Dès 2 €/u</div></a>
-          <a href="medical.html" class="hero-card"><div class="hc-icon"></div><div class="hc-name">Médical</div><div class="hc-price">Dès 0,10 €/u</div></a>
-          <a href="contact.html" class="hero-card"><div class="hc-icon"></div><div class="hc-name">Devis gratuit</div><div class="hc-price">Réponse sous 24h</div></a>
+          <a href="high-tech.html" class="hero-card">
+            <div class="hc-icon-wrap">
+              <svg class="hc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--vert)"><rect x="6" y="2" width="12" height="20" rx="2.5"/><line x1="6" y1="5.5" x2="18" y2="5.5"/><line x1="6" y1="18" x2="18" y2="18"/></svg>
+            </div>
+            <div class="hc-body">
+              <div class="hc-label">High Tech</div>
+              <div class="hc-name">Smartphones reconditionnés</div>
+              <div class="hc-price">Dès 1,50 €/u</div>
+            </div>
+            <svg class="hc-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="cosmetiques.html" class="hero-card">
+            <div class="hc-icon-wrap">
+              <svg class="hc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--vert)"><path d="M10 2h4"/><path d="M12 2v4"/><path d="M9 6h6l1.5 2.5v11A1.5 1.5 0 0115 21H9a1.5 1.5 0 01-1.5-1.5v-11L9 6z"/><line x1="8" y1="11" x2="16" y2="11"/></svg>
+            </div>
+            <div class="hc-body">
+              <div class="hc-label">Cosmétiques</div>
+              <div class="hc-name">Soins, parfums, maquillage</div>
+              <div class="hc-price">Dès 2 €/u</div>
+            </div>
+            <svg class="hc-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="medical.html" class="hero-card">
+            <div class="hc-icon-wrap">
+              <svg class="hc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--vert)"><circle cx="12" cy="12" r="9.5"/><line x1="12" y1="7.5" x2="12" y2="16.5"/><line x1="7.5" y1="12" x2="16.5" y2="12"/></svg>
+            </div>
+            <div class="hc-body">
+              <div class="hc-label">Médical</div>
+              <div class="hc-name">Paramédical &amp; Dispositifs</div>
+              <div class="hc-price">Dès 0,10 €/u</div>
+            </div>
+            <svg class="hc-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
         </div>
       </div>
     </section>
 
     <!-- NOS UNIVERS -->
-    <section class="section" id="univers">
+    <section class="section section-univers" id="univers">
       <div class="section-inner">
-        <div class="section-header">
+        <div class="section-header reveal">
           <div class="section-eyebrow">Nos univers produits</div>
-          <h2 class="section-title" style="color:var(--vert);">Quatre secteurs,<br>une expertise</h2>
+          <h2 class="section-title">Quatre secteurs,<br>une expertise</h2>
           <p class="section-subtitle">DC SKAT vous propose une gamme complète de produits dans 4 univers distincts, disponibles en stock et livrables rapidement.</p>
         </div>
         <div class="univers-grid">
-          <a href="high-tech.html" class="univers-card">
-            <div class="uc-top"><div class="uc-icon"></div><span class="uc-badge">En stock</span></div>
+
+          <a href="high-tech.html" class="univers-card reveal">
+            <div class="uc-header uc-header-vert">
+              <div class="uc-icon-svg">
+                <svg viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="2.5"/><line x1="6" y1="5.5" x2="18" y2="5.5"/><line x1="6" y1="18" x2="18" y2="18"/><circle cx="12" cy="20" r="0.6" fill="white" stroke="none"/></svg>
+              </div>
+              <span class="uc-badge-top">En stock</span>
+            </div>
             <div class="uc-body">
               <div class="uc-name">High Tech</div>
               <div class="uc-desc">Smartphones reconditionnés Grades A/B, écouteurs Bluetooth, câbles USB-C, montres connectées.</div>
               <div class="uc-price">Dès 1,50 €/unité — Devis sur lots</div>
-              <span class="uc-link">Voir les produits</span>
+              <div class="uc-footer">
+                <span class="uc-link">
+                  Voir les produits
+                  <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </span>
+              </div>
             </div>
           </a>
-          <a href="cosmetiques.html" class="univers-card">
-            <div class="uc-top olive"><div class="uc-icon"></div><span class="uc-badge">En stock</span></div>
+
+          <a href="cosmetiques.html" class="univers-card reveal">
+            <div class="uc-header uc-header-or">
+              <div class="uc-icon-svg">
+                <svg viewBox="0 0 24 24"><path d="M10 2h4"/><path d="M12 2v4"/><path d="M9 6h6l1.5 2.5v11A1.5 1.5 0 0115 21H9a1.5 1.5 0 01-1.5-1.5v-11L9 6z"/><line x1="8" y1="11" x2="16" y2="11"/></svg>
+              </div>
+              <span class="uc-badge-top">En stock</span>
+            </div>
             <div class="uc-body">
               <div class="uc-name">Cosmétiques</div>
               <div class="uc-desc">Soins visage &amp; corps, parfums, maquillage. Marques nationales et génériques.</div>
               <div class="uc-price">Dès 2 €/unité</div>
-              <span class="uc-link">Voir les produits</span>
+              <div class="uc-footer">
+                <span class="uc-link">
+                  Voir les produits
+                  <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </span>
+              </div>
             </div>
           </a>
-          <a href="medical.html" class="univers-card">
-            <div class="uc-top gris"><div class="uc-icon"></div><span class="uc-badge">En stock</span></div>
+
+          <a href="medical.html" class="univers-card reveal">
+            <div class="uc-header uc-header-gris">
+              <div class="uc-icon-svg">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><line x1="12" y1="7.5" x2="12" y2="16.5"/><line x1="7.5" y1="12" x2="16.5" y2="12"/></svg>
+              </div>
+              <span class="uc-badge-top">En stock</span>
+            </div>
             <div class="uc-body">
               <div class="uc-name">Médical &amp; Paramédical</div>
               <div class="uc-desc">Tensiomètres, oxymètres, masques FFP2, gants, thermomètres, mobilité.</div>
               <div class="uc-price">Dès 0,10 €/unité</div>
-              <span class="uc-link">Voir les produits</span>
+              <div class="uc-footer">
+                <span class="uc-link">
+                  Voir les produits
+                  <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </span>
+              </div>
             </div>
           </a>
-          <a href="destockage.html" class="univers-card">
-            <div class="uc-top bronze"><div class="uc-icon">️</div><span class="uc-badge">Arrivages réguliers</span></div>
+
+          <a href="destockage.html" class="univers-card reveal">
+            <div class="uc-header uc-header-bronze">
+              <div class="uc-icon-svg">
+                <svg viewBox="0 0 24 24"><path d="M3 8l9-5 9 5-9 5-9-5z"/><path d="M3 8v9l9 5 9-5V8"/><line x1="12" y1="13" x2="12" y2="22"/></svg>
+              </div>
+              <span class="uc-badge-top">Arrivages réguliers</span>
+            </div>
             <div class="uc-body">
               <div class="uc-name">Déstockage &amp; Lots</div>
               <div class="uc-desc">Palettes mixtes High Tech, fins de série cosmétiques, surstocks entrepôt.</div>
               <div class="uc-price">−40% à −70% sur le prix indicatif</div>
-              <span class="uc-link">Voir les lots</span>
+              <div class="uc-footer">
+                <span class="uc-link">
+                  Voir les lots
+                  <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </span>
+              </div>
             </div>
           </a>
+
         </div>
       </div>
     </section>
 
-    <!-- POURQUOI DC SKAT -->
+    <!-- AVANTAGES -->
     <section class="section section-args">
       <div class="section-inner">
-        <div class="section-header">
+        <div class="section-header reveal">
           <div class="section-eyebrow">Pourquoi DC SKAT</div>
           <h2 class="section-title">Des avantages concrets<br>pour vos achats</h2>
         </div>
         <div class="args-grid">
-          <div class="arg-item"><div class="arg-title">Stock disponible</div><div class="arg-desc">Produits en stock permanent en Île-de-France, prêts à expédier. Pas d'attente, pas de délais de fabrication.</div></div>
-          <div class="arg-item"><div class="arg-title">Prix compétitifs</div><div class="arg-desc">Grossiste direct, sans intermédiaire. Des prix imbattables sur tous nos univers, avec des remises sur les commandes en volume.</div></div>
-          <div class="arg-item"><div class="arg-title">B2B &amp; B2C</div><div class="arg-desc">Nous servons aussi bien les professionnels (revendeurs, e-commerçants) que les particuliers. Devis personnalisé sur demande.</div></div>
-          <div class="arg-item"><div class="arg-title">Arrivages réguliers</div><div class="arg-desc">Des nouveautés et des lots de déstockage arrivent régulièrement. Inscrivez-vous pour être alerté en priorité.</div></div>
-          <div class="arg-item"><div class="arg-title">Multi-canaux</div><div class="arg-desc">Retrouvez nos produits sur 5 marketplaces : Amazon, Cdiscount, eBay, Rakuten et Fnac/Darty.</div></div>
-          <div class="arg-item"><div class="arg-title">Devis rapide</div><div class="arg-desc">Réponse sous 24h pour toute demande de devis. Formulaire simple, sans engagement, pour tous vos besoins.</div></div>
+
+          <div class="arg-card reveal">
+            <div class="arg-icon">
+              <svg viewBox="0 0 24 24"><path d="M20 7H4a2 2 0 00-2 2v10a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2z"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>
+            </div>
+            <div class="arg-title">Stock disponible</div>
+            <div class="arg-desc">Produits en stock permanent en Île-de-France, prêts à expédier. Pas d'attente, pas de délais de fabrication.</div>
+          </div>
+
+          <div class="arg-card reveal">
+            <div class="arg-icon">
+              <svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+            </div>
+            <div class="arg-title">Prix compétitifs</div>
+            <div class="arg-desc">Grossiste direct, sans intermédiaire. Des prix imbattables sur tous nos univers, avec des remises sur les commandes en volume.</div>
+          </div>
+
+          <div class="arg-card reveal">
+            <div class="arg-icon">
+              <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+            </div>
+            <div class="arg-title">B2B &amp; B2C</div>
+            <div class="arg-desc">Nous servons aussi bien les professionnels (revendeurs, e-commerçants) que les particuliers. Devis personnalisé sur demande.</div>
+          </div>
+
+          <div class="arg-card reveal">
+            <div class="arg-icon">
+              <svg viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+            </div>
+            <div class="arg-title">Arrivages réguliers</div>
+            <div class="arg-desc">Des nouveautés et des lots de déstockage arrivent régulièrement. Inscrivez-vous pour être alerté en priorité.</div>
+          </div>
+
+          <div class="arg-card reveal">
+            <div class="arg-icon">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg>
+            </div>
+            <div class="arg-title">Multi-canaux</div>
+            <div class="arg-desc">Retrouvez nos produits sur 5 marketplaces : Amazon, Cdiscount, eBay, Rakuten et Fnac/Darty.</div>
+          </div>
+
+          <div class="arg-card reveal">
+            <div class="arg-icon">
+              <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            </div>
+            <div class="arg-title">Devis rapide</div>
+            <div class="arg-desc">Réponse sous 24h pour toute demande de devis. Formulaire simple, sans engagement, pour tous vos besoins.</div>
+          </div>
+
         </div>
       </div>
     </section>
 
     <!-- MARKETPLACES -->
-    <section class="section">
+    <section class="section section-mp">
       <div class="section-inner">
-        <div class="section-header">
+        <div class="section-header reveal">
           <div class="section-eyebrow">Présence multi-canaux</div>
-          <h2 class="section-title" style="color:var(--vert);">Retrouvez-nous sur<br>vos marketplaces préférées</h2>
+          <h2 class="section-title">Retrouvez-nous sur<br>vos marketplaces préférées</h2>
           <p class="section-subtitle">Nos produits sont disponibles sur les 5 principales marketplaces françaises.</p>
         </div>
         <div class="mp-grid">
-          <div class="mp-badge"><span class="dot"></span> Amazon France</div>
-          <div class="mp-badge"><span class="dot"></span> Cdiscount Pro</div>
-          <div class="mp-badge"><span class="dot"></span> eBay France</div>
-          <div class="mp-badge"><span class="dot"></span> Rakuten France</div>
-          <div class="mp-badge"><span class="dot"></span> Fnac / Darty</div>
+          <div class="mp-card reveal">
+            <div class="mp-logo amazon"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/amazon.svg" alt="Amazon" /></div>
+            <div class="mp-name">Amazon France</div>
+            <span class="mp-status">Actif</span>
+          </div>
+          <div class="mp-card reveal">
+            <div class="mp-logo cdiscount"><img src="cdiscount-logo.png" alt="Cdiscount" style="filter:none;width:30px;height:30px;" /></div>
+            <div class="mp-name">Cdiscount Pro</div>
+            <span class="mp-status">Actif</span>
+          </div>
+          <div class="mp-card reveal">
+            <div class="mp-logo ebay"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/ebay.svg" alt="eBay" /></div>
+            <div class="mp-name">eBay France</div>
+            <span class="mp-status">Actif</span>
+          </div>
+          <div class="mp-card reveal">
+            <div class="mp-logo rakuten"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/rakuten.svg" alt="Rakuten" /></div>
+            <div class="mp-name">Rakuten France</div>
+            <span class="mp-status">Actif</span>
+          </div>
+          <div class="mp-card reveal">
+            <div class="mp-logo fnac"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/fnac.svg" alt="Fnac" /></div>
+            <div class="mp-name">Fnac / Darty</div>
+            <span class="mp-status">Actif</span>
+          </div>
         </div>
       </div>
     </section>
@@ -347,12 +708,13 @@
     <!-- CTA FINAL -->
     <section class="section section-cta">
       <div class="section-inner">
-        <div class="cta-box">
-          <div class="cta-text">
+        <div class="cta-box reveal">
+          <div class="cta-content">
+            <div class="cta-eyebrow">Contact &amp; Devis</div>
             <div class="cta-title">Besoin d'un <span>devis</span><br>personnalisé ?</div>
-            <p>Réponse garantie sous 24h. Sans engagement.</p>
+            <p class="cta-sub">Réponse garantie sous 24h. Sans engagement.</p>
           </div>
-          <div class="btn-group">
+          <div class="cta-actions">
             <a href="contact.html" class="btn btn-primary">Demander un devis</a>
             <a href="mailto:contact@dcskat.fr" class="btn btn-secondary">contact@dcskat.fr</a>
           </div>
@@ -367,12 +729,12 @@
     <div class="footer-inner">
       <div class="footer-grid">
         <div class="footer-brand">
-          <img src="logo.png" alt="DC SKAT" style="width:200px;height:auto;margin-bottom:0.8rem;display:block;" />
-          <p class="footer-desc">Grossiste multisectoriel basé en Île-de-France. Spécialiste du High Tech, Cosmétiques, Médical & Paramédical et Déstockage. B2B & B2C.</p>
+          <img src="logo.png" alt="DC SKAT" style="width:180px;height:auto;margin-bottom:0.8rem;opacity:0.9;" />
+          <p class="footer-desc">Grossiste multisectoriel basé en Île-de-France. Spécialiste du High Tech, Cosmétiques, Médical &amp; Paramédical et Déstockage. B2B &amp; B2C.</p>
           <div class="footer-contact">
-            <div> <a href="mailto:contact@dcskat.fr">contact@dcskat.fr</a></div>
-            <div> Île-de-France, France</div>
-            <div> NAF 4690Z</div>
+            <div><a href="mailto:contact@dcskat.fr">contact@dcskat.fr</a></div>
+            <div>Île-de-France, France</div>
+            <div>NAF 4690Z</div>
           </div>
         </div>
         <div class="footer-col">
@@ -380,8 +742,8 @@
           <ul>
             <li><a href="high-tech.html">High Tech</a></li>
             <li><a href="cosmetiques.html">Cosmétiques</a></li>
-            <li><a href="medical.html">Médical & Paramédical</a></li>
-            <li><a href="destockage.html">Déstockage & Lots</a></li>
+            <li><a href="medical.html">Médical &amp; Paramédical</a></li>
+            <li><a href="destockage.html">Déstockage &amp; Lots</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -396,7 +758,7 @@
         <div class="footer-col">
           <h4>Informations</h4>
           <ul>
-            <li><a href="contact.html">Contact & Devis</a></li>
+            <li><a href="contact.html">Contact &amp; Devis</a></li>
             <li><a href="cgv.html">CGV</a></li>
             <li><a href="mentions-legales.html">Mentions légales</a></li>
             <li><a href="rgpd.html">Politique RGPD</a></li>
@@ -414,8 +776,17 @@
     </div>
   </footer>
 
-  <!-- Script commun -->
   <script src="main.js"></script>
-
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 80);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
 </body>
 </html>
