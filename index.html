@@ -19,6 +19,37 @@
       position: relative;
       overflow: hidden;
     }
+    .hero-flow { position: absolute; inset: 0; pointer-events: none; z-index: 0; overflow: hidden; }
+    .hero-flow .pkg {
+      position: absolute;
+      width: 7px; height: 7px;
+      border-radius: 2px;
+      animation: flowAcross linear infinite;
+    }
+    .hero-flow .pkg.gold { background: var(--or); box-shadow: 0 0 0 3px rgba(175,137,50,0.12); }
+    .hero-flow .pkg.green { background: var(--vert); box-shadow: 0 0 0 3px rgba(0,81,44,0.1); }
+    .hero-flow .pkg:nth-child(1)  { top: 18%; width: 8px; height: 8px; animation-duration: 11s; animation-delay: 0s; }
+    .hero-flow .pkg:nth-child(2)  { top: 18%; width: 5px; height: 5px; animation-duration: 14s; animation-delay: -4s; }
+    .hero-flow .pkg:nth-child(3)  { top: 42%; width: 6px; height: 6px; animation-duration: 12.5s; animation-delay: -2s; }
+    .hero-flow .pkg:nth-child(4)  { top: 42%; width: 9px; height: 9px; animation-duration: 16s; animation-delay: -7s; }
+    .hero-flow .pkg:nth-child(5)  { top: 64%; width: 6px; height: 6px; animation-duration: 13s; animation-delay: -5.5s; }
+    .hero-flow .pkg:nth-child(6)  { top: 64%; width: 7px; height: 7px; animation-duration: 10.5s; animation-delay: -1s; }
+    .hero-flow .pkg:nth-child(7)  { top: 86%; width: 5px; height: 5px; animation-duration: 15s; animation-delay: -9s; }
+    .hero-flow .pkg:nth-child(8)  { top: 86%; width: 8px; height: 8px; animation-duration: 12s; animation-delay: -3s; }
+    .hero-flow .pkg:nth-child(9)  { top: 8%;  width: 6px; height: 6px; animation-duration: 13.5s; animation-delay: -6s; }
+    .hero-flow .pkg:nth-child(10) { top: 30%; width: 7px; height: 7px; animation-duration: 11.5s; animation-delay: -8s; }
+    .hero-flow .pkg:nth-child(11) { top: 53%; width: 5px; height: 5px; animation-duration: 14.5s; animation-delay: -2.5s; }
+    .hero-flow .pkg:nth-child(12) { top: 75%; width: 6px; height: 6px; animation-duration: 12s; animation-delay: -10s; }
+    .hero-flow .pkg:nth-child(13) { top: 24%; width: 5px; height: 5px; animation-duration: 13s;   animation-delay: -1.2s; }
+    .hero-flow .pkg:nth-child(14) { top: 48%; width: 8px; height: 8px; animation-duration: 15.5s; animation-delay: -5s; }
+    .hero-flow .pkg:nth-child(15) { top: 70%; width: 6px; height: 6px; animation-duration: 11s;   animation-delay: -7.5s; }
+    .hero-flow .pkg:nth-child(16) { top: 92%; width: 7px; height: 7px; animation-duration: 14s;   animation-delay: -3.8s; }
+    @keyframes flowAcross {
+      0%   { left: -3%; opacity: 0; }
+      8%   { opacity: 0.85; }
+      92%  { opacity: 0.85; }
+      100% { left: 103%; opacity: 0; }
+    }
     /* Cercle décoratif vert en arrière-plan */
     .hero::before {
       content: '';
@@ -400,6 +431,16 @@
 
     <!-- HERO -->
     <section class="hero">
+      <div class="hero-flow">
+        <span class="pkg gold"></span><span class="pkg green"></span>
+        <span class="pkg green"></span><span class="pkg gold"></span>
+        <span class="pkg gold"></span><span class="pkg green"></span>
+        <span class="pkg green"></span><span class="pkg gold"></span>
+        <span class="pkg gold"></span><span class="pkg green"></span>
+        <span class="pkg green"></span><span class="pkg gold"></span>
+        <span class="pkg gold"></span><span class="pkg green"></span>
+        <span class="pkg green"></span><span class="pkg gold"></span>
+      </div>
       <div class="hero-inner">
         <div class="hero-content">
           <div class="hero-eyebrow">
