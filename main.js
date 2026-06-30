@@ -35,4 +35,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  // ─── HEADER COMPACT AU SCROLL ────────────────────────
+  const header = document.querySelector('.header');
+  if (header) {
+    const toggleScrolled = () => {
+      header.classList.toggle('scrolled', window.scrollY > 12);
+    };
+    toggleScrolled();
+    window.addEventListener('scroll', toggleScrolled, { passive: true });
+  }
+
 });
