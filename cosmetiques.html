@@ -3,66 +3,221 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="DC SKAT Cosmétiques — Soins visage & corps, parfums, maquillage. Grossiste B2B & B2C — Île-de-France." />
+  <meta name="description" content="DC SKAT Cosmétiques — Soins visage & corps, parfums, maquillage. Marques nationales et génériques. B2B & B2C." />
+  <meta name="theme-color" content="#00512c" />
   <title>Cosmétiques — DC SKAT</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <style>
-    .page-hero { background: linear-gradient(135deg, #7a7a28 0%, var(--or) 100%); color: var(--blanc-pur); padding: 4rem 1.5rem 3rem; position: relative; overflow: hidden; }
-    .page-hero::before { content: ''; position: absolute; inset: 0; background: repeating-linear-gradient(45deg, transparent, transparent 40px, rgba(255,255,255,0.03) 40px, rgba(255,255,255,0.03) 80px); }
-    .page-hero-inner { max-width: 1200px; margin: 0 auto; position: relative; z-index: 1; }
-    .breadcrumb { font-size: 0.78rem; color: rgba(255,255,255,0.6); margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; }
-    .breadcrumb a { color: rgba(255,255,255,0.6); transition: color var(--transition); }
-    .breadcrumb a:hover { color: var(--blanc-pur); }
-    .breadcrumb span { color: rgba(255,255,255,0.3); }
-    .page-hero-label { display: inline-flex; align-items: center; gap: 8px; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--blanc-pur); background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); padding: 5px 14px; border-radius: 100px; margin-bottom: 1rem; }
-    .page-hero h1 { font-family: var(--font-titre); font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 800; text-transform: uppercase; line-height: 1.0; margin-bottom: 1rem; }
-    .page-hero h1 .accent { color: rgba(255,255,255,0.5); }
-    .page-hero-desc { font-size: 1rem; color: rgba(255,255,255,0.85); max-width: 560px; line-height: 1.7; margin-bottom: 2rem; }
-    .btn-group { display: flex; gap: 1rem; flex-wrap: wrap; }
-    .btn { display: inline-block; font-family: var(--font-corps); font-size: 0.88rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 14px 28px; border-radius: var(--radius); transition: var(--transition); cursor: pointer; border: none; text-decoration: none; }
-    .btn-primary { background: var(--vert); color: var(--blanc-pur); }
-    .btn-primary:hover { background: var(--vert-dark); }
-    .btn-secondary { background: transparent; color: var(--blanc-pur); border: 2px solid rgba(255,255,255,0.5); }
-    .btn-secondary:hover { background: rgba(255,255,255,0.1); }
 
-    .univers-section { padding: 4rem 1.5rem; }
-    .univers-inner { max-width: 1200px; margin: 0 auto; }
-    .section-eyebrow { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--or); margin-bottom: 0.6rem; }
-    .section-title { font-family: var(--font-titre); font-size: clamp(1.8rem, 3vw, 2.5rem); font-weight: 800; text-transform: uppercase; color: var(--vert); line-height: 1.05; margin-bottom: 1rem; }
-    .section-desc { font-size: 0.95rem; color: var(--gris); line-height: 1.7; max-width: 680px; margin-bottom: 2rem; }
+    /* ══ HERO PAGE ════════════════════════════════════════ */
+    .page-hero {
+      background: linear-gradient(135deg, #af8932, #c9a050);
+      padding: 5rem 2rem 4rem;
+      position: relative; overflow: hidden;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none;
+    }
+    .page-hero::after {
+      content: '';
+      position: absolute; top: -120px; right: -120px;
+      width: 400px; height: 400px; border-radius: 50%;
+      background: rgba(255,255,255,0.05);
+      pointer-events: none;
+    }
+    .page-hero-inner {
+      max-width: 1280px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr auto;
+      gap: 3rem; align-items: center;
+      position: relative; z-index: 1;
+    }
+    .page-hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: rgba(255,255,255,0.9);
+      font-size: 0.7rem; font-weight: 700;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      padding: 6px 16px; border-radius: 100px;
+      margin-bottom: 1.2rem;
+    }
+    .page-hero h1 {
+      font-family: var(--font-titre);
+      font-size: clamp(2.4rem, 4.5vw, 4rem);
+      font-weight: 800; color: var(--blanc);
+      line-height: 1.1; margin-bottom: 1.2rem;
+    }
+    .page-hero-desc {
+      font-size: 1rem; color: rgba(255,255,255,0.8);
+      line-height: 1.75; margin-bottom: 2rem; max-width: 560px;
+    }
+    .page-hero-badge {
+      background: rgba(255,255,255,0.12);
+      border: 1.5px solid rgba(255,255,255,0.2);
+      border-radius: var(--radius-xl);
+      padding: 2rem;
+      text-align: center; min-width: 200px;
+      flex-shrink: 0;
+    }
+    .page-hero-badge .prix {
+      font-family: var(--font-titre); font-size: 2.4rem;
+      font-weight: 800; color: var(--blanc); display: block;
+    }
+    .page-hero-badge .prix-label {
+      font-size: 0.75rem; color: rgba(255,255,255,0.65);
+      text-transform: uppercase; letter-spacing: 0.08em;
+      margin-top: 4px; display: block;
+    }
+    .page-hero-badge .status {
+      margin-top: 1rem;
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(255,255,255,0.2);
+      color: var(--blanc);
+      font-size: 0.72rem; font-weight: 700;
+      padding: 5px 14px; border-radius: 100px;
+    }
+    .page-hero-badge .status::before {
+      content: ''; width: 6px; height: 6px;
+      border-radius: 50%; background: #4ade80;
+    }
 
-    .alerte { background: rgba(175,137,50,0.08); border-left: 4px solid var(--or); padding: 1rem 1.5rem; border-radius: 0 8px 8px 0; margin-bottom: 3rem; font-size: 0.82rem; color: var(--noir); line-height: 1.6; }
-    .alerte strong { color: var(--bronze); }
+    /* ══ BREADCRUMB ══════════════════════════════════════ */
+    .breadcrumb {
+      background: var(--blanc);
+      border-bottom: 1px solid var(--gris-bord);
+      padding: 12px 2rem;
+    }
+    .breadcrumb-inner {
+      max-width: 1280px; margin: 0 auto;
+      display: flex; align-items: center; gap: 8px;
+      font-size: 0.78rem; color: var(--texte-sec);
+    }
+    .breadcrumb a { color: var(--vert); transition: color var(--transition); }
+    .breadcrumb a:hover { color: var(--or); }
+    .breadcrumb-sep { color: var(--gris-bord); }
 
-    .categories-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; margin-bottom: 3rem; }
-    .cat-card { background: var(--blanc-pur); border: 2px solid #e8e7e0; border-radius: 10px; padding: 1.8rem 1.2rem; text-align: center; transition: border-color var(--transition), box-shadow var(--transition), transform var(--transition); }
-    .cat-card:hover { border-color: var(--or); box-shadow: 0 8px 24px rgba(175,137,50,0.12); transform: translateY(-3px); }
-    .cat-icon { font-size: 2.5rem; margin-bottom: 0.8rem; }
-    .cat-name { font-family: var(--font-titre); font-size: 1rem; font-weight: 800; text-transform: uppercase; color: var(--vert); margin-bottom: 0.4rem; }
-    .cat-desc { font-size: 0.78rem; color: var(--gris); line-height: 1.5; }
-    .cat-prix { font-size: 0.78rem; font-weight: 700; color: var(--or); margin-top: 0.5rem; }
+    /* ══ CATEGORIES ══════════════════════════════════════ */
+    .section-cats { background: var(--blanc); }
+    .cats-grid {
+      display: grid; grid-template-columns: repeat(3,1fr);
+      gap: 1.2rem;
+    }
+    .cat-card {
+      background: var(--blanc);
+      border: 1.5px solid var(--gris-bord);
+      border-radius: var(--radius-lg);
+      padding: 1.8rem;
+      transition: all 0.3s ease;
+      position: relative; overflow: hidden;
+    }
+    .cat-card::before {
+      content: '';
+      position: absolute; left: 0; top: 0; bottom: 0;
+      width: 4px; background: var(--vert);
+      transform: scaleY(0); transition: transform 0.3s ease;
+      transform-origin: bottom;
+    }
+    .cat-card:hover {
+      border-color: var(--vert-mid);
+      box-shadow: var(--shadow-vert);
+      transform: translateY(-3px);
+    }
+    .cat-card:hover::before { transform: scaleY(1); }
+    .cat-num {
+      font-family: var(--font-titre); font-size: 0.7rem;
+      font-weight: 700; color: var(--or);
+      text-transform: uppercase; letter-spacing: 0.12em;
+      margin-bottom: 0.8rem;
+    }
+    .cat-name { font-family: var(--font-titre); font-size: 1.1rem; font-weight: 700; color: var(--texte); margin-bottom: 0.5rem; }
+    .cat-desc { font-size: 0.83rem; color: var(--texte-sec); line-height: 1.6; }
+    .cat-price {
+      display: inline-flex; align-items: center; gap: 5px;
+      font-size: 0.8rem; font-weight: 700; color: var(--or);
+      margin-top: 1rem;
+      background: var(--or-light);
+      padding: 4px 12px; border-radius: 100px;
+    }
 
-    .cta-boutique { background: linear-gradient(135deg, #7a7a28 0%, var(--or) 100%); border-radius: 14px; padding: 3rem 2.5rem; display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
-    .cta-boutique-text .title { font-family: var(--font-titre); font-size: clamp(1.5rem, 3vw, 2.2rem); font-weight: 800; text-transform: uppercase; color: var(--blanc-pur); line-height: 1.1; }
-    .cta-boutique-text .title span { color: rgba(255,255,255,0.5); }
-    .cta-boutique-text p { font-size: 0.88rem; color: rgba(255,255,255,0.7); margin-top: 0.5rem; }
+    /* ══ INFO ════════════════════════════════════════════ */
+    .section-info { background: var(--off-white); }
+    .info-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 4rem; align-items: center;
+    }
+    .info-title { font-family: var(--font-titre); font-size: 1.8rem; font-weight: 800; color: var(--texte); margin-bottom: 1rem; line-height: 1.2; }
+    .info-desc { font-size: 0.9rem; color: var(--texte-sec); line-height: 1.75; margin-bottom: 1.5rem; }
+    .info-points { display: flex; flex-direction: column; gap: 0.8rem; }
+    .info-point {
+      display: flex; align-items: flex-start; gap: 12px;
+      font-size: 0.85rem; color: var(--texte-sec); line-height: 1.5;
+    }
+    .info-point-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--vert); flex-shrink: 0; margin-top: 6px;
+    }
+    .info-card {
+      background: var(--blanc);
+      border: 1.5px solid var(--gris-bord);
+      border-radius: var(--radius-xl);
+      padding: 2.5rem; display: flex; flex-direction: column; gap: 1.5rem;
+    }
+    .info-stat {
+      display: flex; flex-direction: column; gap: 4px;
+      padding-bottom: 1.5rem; border-bottom: 1px solid var(--gris-bord);
+    }
+    .info-stat:last-child { border-bottom: none; padding-bottom: 0; }
+    .info-stat-val { font-family: var(--font-titre); font-size: 2rem; font-weight: 800; color: var(--vert); line-height: 1; }
+    .info-stat-label { font-size: 0.8rem; color: var(--texte-sec); }
 
-    @media (max-width: 768px) { .categories-grid { grid-template-columns: 1fr; } .cta-boutique { flex-direction: column; text-align: center; } .cta-boutique .btn-group { justify-content: center; } }
+    /* ══ CTA ════════════════════════════════════════════ */
+    .section-cta-page { background: var(--blanc); }
+    .cta-box {
+      background: linear-gradient(135deg, #af8932, #c9a050);
+      border-radius: var(--radius-xl);
+      padding: 4rem 3.5rem;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 2rem; flex-wrap: wrap; position: relative; overflow: hidden;
+    }
+    .cta-box::before {
+      content: '';
+      position: absolute; top: -80px; right: -80px;
+      width: 300px; height: 300px; border-radius: 50%;
+      background: rgba(255,255,255,0.06); pointer-events: none;
+    }
+    .cta-title { font-family: var(--font-titre); font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 800; color: var(--blanc); line-height: 1.1; position: relative; z-index: 1; }
+    .cta-sub { font-size: 0.9rem; color: rgba(255,255,255,0.65); margin-top: 0.5rem; }
+    .cta-actions { display: flex; gap: 1rem; flex-wrap: wrap; position: relative; z-index: 1; }
+
+    /* ══ ANIMATIONS ═════════════════════════════════════ */
+    .reveal { opacity: 0; transition: opacity 0.6s ease, transform 0.6s ease; transform: translateY(20px); }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ══ RESPONSIVE ═════════════════════════════════════ */
+    @media (max-width: 1024px) { .cats-grid { grid-template-columns: repeat(2,1fr); } .info-grid { grid-template-columns: 1fr; gap: 2rem; } }
+    @media (max-width: 768px) { .page-hero-inner { grid-template-columns: 1fr; } .page-hero-badge { display: none; } }
+    @media (max-width: 640px) { .cats-grid { grid-template-columns: 1fr; } .cta-box { flex-direction: column; padding: 2.5rem 1.8rem; } }
+    .btn-primary { background: var(--vert) !important; color: var(--blanc-pur) !important; }
+    .btn-primary:hover { background: var(--vert-dark) !important; }
   </style>
 </head>
 <body>
 
-  
-
   <header class="header">
     <div class="header-inner">
       <a href="index.html" class="logo" aria-label="DC SKAT — Accueil">
-        <img src="logo.png" alt="DC SKAT — Distribution et Commerce Multisectoriel" />
+        <img src="logo.png" alt="DC SKAT" />
       </a>
-      <nav class="nav">
+      <nav class="nav" aria-label="Navigation principale">
         <a href="index.html">Accueil</a>
         <a href="high-tech.html">High Tech</a>
         <a href="cosmetiques.html" class="active">Cosmétiques</a>
@@ -77,7 +232,7 @@
     <nav class="nav-mobile" id="navMobile">
       <a href="index.html">Accueil</a>
       <a href="high-tech.html">High Tech</a>
-      <a href="cosmetiques.html" class="active">Cosmétiques</a>
+      <a href="cosmetiques.html">Cosmétiques</a>
       <a href="medical.html">Médical</a>
       <a href="destockage.html">Déstockage</a>
       <a href="contact.html" class="nav-cta">Demander un devis</a>
@@ -85,94 +240,166 @@
   </header>
 
   <main>
+
+    <!-- HERO -->
     <section class="page-hero">
       <div class="page-hero-inner">
-        <div class="breadcrumb"><a href="index.html">Accueil</a><span>›</span><strong>Cosmétiques</strong></div>
-        <div class="page-hero-label"> Univers Cosmétiques</div>
-        <h1>Cosmé<span class="accent">tiques</span></h1>
-        <p class="page-hero-desc">Soins visage & corps, parfums et maquillage. Marques nationales et génériques. En stock — B2B & B2C.</p>
-        <div class="btn-group">
-          <a href="https://cosmetiques.dcskat.fr" class="btn btn-primary" target="_blank">Accéder à la boutique</a>
-          <a href="contact.html" class="btn btn-secondary">Demander un devis</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="univers-section">
-      <div class="univers-inner">
-        <div class="alerte">️ <strong>Information réglementaire :</strong> Nos produits cosmétiques sont conformes à la réglementation européenne. Mentions INCI/INCO disponibles sur demande.</div>
-
-        <div class="section-eyebrow">Ce que nous proposons</div>
-        <h2 class="section-title">Notre gamme Cosmétiques</h2>
-        <p class="section-desc">DC SKAT distribue des produits cosmétiques disponibles en stock en Île-de-France, pour les professionnels et les particuliers.</p>
-
-        <div class="categories-grid">
-          <div class="cat-card">
-            <div class="cat-icon"></div>
-            <div class="cat-name">Soins visage & corps</div>
-            <div class="cat-desc">Marques nationales et génériques — En stock.</div>
-            <div class="cat-prix">Dès 2 €/u</div>
-          </div>
-          <div class="cat-card">
-            <div class="cat-icon"></div>
-            <div class="cat-name">Parfums</div>
-            <div class="cat-desc">Marques nationales et génériques — En stock.</div>
-            <div class="cat-prix">Dès 2 €/u</div>
-          </div>
-          <div class="cat-card">
-            <div class="cat-icon"></div>
-            <div class="cat-name">Maquillage</div>
-            <div class="cat-desc">Marques nationales et génériques — En stock.</div>
-            <div class="cat-prix">Dès 2 €/u</div>
-          </div>
-        </div>
-
-        <div class="cta-boutique">
-          <div class="cta-boutique-text">
-            <div class="title">Boutique <span>Cosmétiques</span><br>en ligne</div>
-            <p>Commandez directement sur notre boutique ou contactez-nous pour un devis professionnel.</p>
-          </div>
+        <div>
+          <div class="page-hero-eyebrow">Univers Cosmétiques</div>
+          <h1>Soins, parfums<br>et maquillage</h1>
+          <p class="page-hero-desc">Crèmes, sérums, parfums et maquillage — marques nationales et génériques. Conformes INCI et CPNP. Stock permanent, disponible à l'unité ou en lots.</p>
           <div class="btn-group">
-            <a href="https://cosmetiques.dcskat.fr" class="btn btn-primary" target="_blank">Visiter la boutique</a>
-            <a href="contact.html" class="btn btn-secondary">Devis lots B2B</a>
+            <a href="contact.html" class="btn btn-primary">Demander un devis</a>
+            <a href="https://cosmetiques.dcskat.fr" class="btn btn-secondary" target="_blank" rel="noopener">Accéder à la boutique</a>
+          </div>
+        </div>
+        <div class="page-hero-badge">
+          <span class="prix">Dès 2 €/u</span>
+          <span class="prix-label">Prix indicatif</span>
+          <div class="status">En stock</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BREADCRUMB -->
+    <div class="breadcrumb">
+      <div class="breadcrumb-inner">
+        <a href="index.html">DC SKAT</a>
+        <span class="breadcrumb-sep">›</span>
+        <span>Cosmétiques</span>
+      </div>
+    </div>
+
+    <!-- CATEGORIES -->
+    <section class="section section-cats">
+      <div class="section-inner">
+        <div class="section-header reveal">
+          <div class="section-eyebrow">Nos produits</div>
+          <h2 class="section-title" style="color:var(--texte);">Catalogue Cosmétiques</h2>
+          <p class="section-subtitle">Disponibles en stock en Île-de-France — À l'unité ou en lots — Devis personnalisé sur demande.</p>
+        </div>
+        <div class="cats-grid">
+          <div class="cat-card reveal">
+            <div class="cat-num">01</div>
+            <div class="cat-name">Soins visage</div>
+            <div class="cat-desc">Crèmes hydratantes, sérums, contours des yeux. Mentions INCI disponibles.</div>
+            <div class="cat-price">Dès 2 €/u</div>
+          </div>
+          <div class="cat-card reveal">
+            <div class="cat-num">02</div>
+            <div class="cat-name">Soins corps</div>
+            <div class="cat-desc">Laits, gels douche, huiles. Disponibles en lots.</div>
+            <div class="cat-price">Dès 2 €/u</div>
+          </div>
+          <div class="cat-card reveal">
+            <div class="cat-num">03</div>
+            <div class="cat-name">Parfums</div>
+            <div class="cat-desc">Eaux de parfum et de toilette femme et homme. Conformes IFRA.</div>
+            <div class="cat-price">Sur devis</div>
+          </div>
+          <div class="cat-card reveal">
+            <div class="cat-num">04</div>
+            <div class="cat-name">Maquillage</div>
+            <div class="cat-desc">Rouges à lèvres, fonds de teint, mascaras. Testés dermatologiquement.</div>
+            <div class="cat-price">Dès 2 €/u</div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- INFO -->
+    <section class="section section-info">
+      <div class="section-inner">
+        <div class="info-grid">
+          <div class="reveal">
+            <div class="section-eyebrow">Pourquoi DC SKAT</div>
+            <div class="info-title">Stock permanent,<br>prix grossiste</div>
+            <p class="info-desc">DC SKAT vous garantit un stock disponible en permanence en Île-de-France. Professionnels et particuliers bénéficient des mêmes tarifs grossiste sans intermédiaire.</p>
+            <div class="info-points">
+              <div class="info-point"><div class="info-point-dot"></div><span>Stock disponible immédiatement — expédition sous 24h</span></div>
+              <div class="info-point"><div class="info-point-dot"></div><span>Prix grossiste direct — remises sur les commandes en volume</span></div>
+              <div class="info-point"><div class="info-point-dot"></div><span>B2B et B2C — revendeurs, e-commerçants et particuliers</span></div>
+              <div class="info-point"><div class="info-point-dot"></div><span>Devis personnalisé sous 24h — sans engagement</span></div>
+            </div>
+          </div>
+          <div class="info-card reveal">
+            <div class="info-stat">
+              <span class="info-stat-val">24h</span>
+              <span class="info-stat-label">Délai de réponse pour un devis personnalisé</span>
+            </div>
+            <div class="info-stat">
+              <span class="info-stat-val">5</span>
+              <span class="info-stat-label">Marketplaces partenaires — Amazon, Cdiscount, eBay, Rakuten, Fnac</span>
+            </div>
+            <div class="info-stat">
+              <span class="info-stat-val">B2B</span>
+              <span class="info-stat-label">et B2C — professionnels et particuliers bienvenus</span>
+            </div>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- CTA -->
+    <section class="section section-cta-page">
+      <div class="section-inner">
+        <div class="cta-box reveal">
+          <div>
+            <div class="cta-title">Intéressé par nos produits<br>Cosmétiques ?</div>
+            <p class="cta-sub">Contactez-nous pour un devis personnalisé. Réponse sous 24h.</p>
+          </div>
+          <div class="cta-actions">
+            <a href="contact.html" class="btn btn-primary">Demander un devis</a>
+            <a href="https://cosmetiques.dcskat.fr" class="btn btn-secondary" target="_blank" rel="noopener">Voir la boutique</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <footer class="footer">
     <div class="footer-inner">
       <div class="footer-grid">
         <div class="footer-brand">
-          <img src="logo.png" alt="DC SKAT" style="width:200px;height:auto;margin-bottom:0.8rem;display:block;" />
-          <p class="footer-desc">Grossiste multisectoriel basé en Île-de-France. B2B & B2C.</p>
+          <img src="logo.png" alt="DC SKAT" style="width:180px;height:auto;margin-bottom:0.8rem;opacity:0.9;" />
+          <p class="footer-desc">Grossiste multisectoriel basé en Île-de-France. B2B &amp; B2C.</p>
           <div class="footer-contact">
-            <div> <a href="mailto:contact@dcskat.fr">contact@dcskat.fr</a></div>
-            <div> Île-de-France, France</div>
+            <div><a href="mailto:contact@dcskat.fr">contact@dcskat.fr</a></div>
+            <div>Île-de-France, France</div>
           </div>
         </div>
-        <div class="footer-col"><h4>Nos univers</h4><ul>
-          <li><a href="high-tech.html">High Tech</a></li>
-          <li><a href="cosmetiques.html">Cosmétiques</a></li>
-          <li><a href="medical.html">Médical & Paramédical</a></li>
-          <li><a href="destockage.html">Déstockage & Lots</a></li>
-        </ul></div>
-        <div class="footer-col"><h4>Boutiques</h4><ul>
-          <li><a href="https://hightech.dcskat.fr" target="_blank">High Tech Shop</a></li>
-          <li><a href="https://cosmetiques.dcskat.fr" target="_blank">Cosmétiques Shop</a></li>
-          <li><a href="https://medical.dcskat.fr" target="_blank">Médical Shop</a></li>
-          <li><a href="https://destockage.dcskat.fr" target="_blank">Déstockage Shop</a></li>
-        </ul></div>
-        <div class="footer-col"><h4>Informations</h4><ul>
-          <li><a href="contact.html">Contact & Devis</a></li>
-          <li><a href="cgv.html">CGV</a></li>
-          <li><a href="mentions-legales.html">Mentions légales</a></li>
-          <li><a href="rgpd.html">RGPD</a></li>
-        </ul></div>
+        <div class="footer-col">
+          <h4>Nos univers</h4>
+          <ul>
+            <li><a href="high-tech.html">High Tech</a></li>
+            <li><a href="cosmetiques.html">Cosmétiques</a></li>
+            <li><a href="medical.html">Médical &amp; Paramédical</a></li>
+            <li><a href="destockage.html">Déstockage &amp; Lots</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Boutiques en ligne</h4>
+          <ul>
+            <li><a href="https://hightech.dcskat.fr" target="_blank" rel="noopener">High Tech Shop</a></li>
+            <li><a href="https://cosmetiques.dcskat.fr" target="_blank" rel="noopener">Cosmétiques Shop</a></li>
+            <li><a href="https://medical.dcskat.fr" target="_blank" rel="noopener">Médical Shop</a></li>
+            <li><a href="https://destockage.dcskat.fr" target="_blank" rel="noopener">Déstockage Shop</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Informations</h4>
+          <ul>
+            <li><a href="contact.html">Contact &amp; Devis</a></li>
+            <li><a href="cgv.html">CGV</a></li>
+            <li><a href="mentions-legales.html">Mentions légales</a></li>
+            <li><a href="rgpd.html">RGPD</a></li>
+          </ul>
+        </div>
       </div>
       <div class="footer-bottom">
-        <p>© 2026 DC SKAT — Tous droits réservés.</p>
+        <p>© 2026 DC SKAT — Distribution et Commerce Multisectoriel. Tous droits réservés.</p>
         <nav class="footer-legal">
           <a href="cgv.html">CGV</a>
           <a href="mentions-legales.html">Mentions légales</a>
@@ -181,6 +408,19 @@
       </div>
     </div>
   </footer>
+
   <script src="main.js"></script>
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 80);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+
 </body>
 </html>
